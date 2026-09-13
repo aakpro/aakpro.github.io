@@ -1,911 +1,158 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amir Kashani — Cross-Platform Mobile Engineering Lead & Systems Architect</title>
-    <style>
-        :root {
-            --bg-primary: #FAFAF9;
-            --bg-secondary: #F3FFFE;
-            --text-primary: #1A1A1A;
-            --text-secondary: #6B7280;
-            --accent: #0E7C7B;
-            --accent-light: #E0F7F6;
-            --border: #E5E7EB;
-            --success: #10B981;
-
-            --font-display: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            --font-mono: "Menlo", "Monaco", "Courier New", monospace;
-        }
-
-        @media (prefers-color-scheme: dark) {
-            :root:not([data-theme="light"]) {
-                --bg-primary: #0F1419;
-                --bg-secondary: #111C24;
-                --text-primary: #FFFFFF;
-                --text-secondary: #A0AEC0;
-                --accent: #14B8A6;
-                --accent-light: #134E4A;
-                --border: #374151;
-            }
-        }
-
-        :root[data-theme="dark"] {
-            --bg-primary: #0F1419;
-            --bg-secondary: #111C24;
-            --text-primary: #FFFFFF;
-            --text-secondary: #A0AEC0;
-            --accent: #14B8A6;
-            --accent-light: #134E4A;
-            --border: #374151;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: var(--font-body);
-            font-size: 16px;
-            line-height: 1.6;
-            color: var(--text-primary);
-            background-color: var(--bg-primary);
-            transition: background-color 0.2s, color 0.2s;
-        }
-
-        main {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        @media (max-width: 768px) {
-            main {
-                padding: 1.5rem 1rem;
-            }
-        }
-
-        /* Hero / Intro Section */
-        .hero {
-            text-align: center;
-            margin-bottom: 4rem;
-            padding-bottom: 3rem;
-            border-bottom: 2px solid var(--accent);
-        }
-
-        .avatar {
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            margin: 0 auto 2rem;
-            border: 3px solid var(--accent);
-            display: block;
-        }
-
-        .hero h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            margin-bottom: 0.5rem;
-            font-family: var(--font-display);
-        }
-
-        .hero .subtitle {
-            font-size: 1.25rem;
-            color: var(--accent);
-            font-weight: 500;
-            margin-bottom: 1.5rem;
-            letter-spacing: -0.01em;
-        }
-
-        .hero .location-info {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            font-size: 0.95rem;
-            color: var(--text-secondary);
-            margin-bottom: 1.5rem;
-            flex-wrap: wrap;
-        }
-
-        .hero .location-info a {
-            color: var(--accent);
-            text-decoration: none;
-            border-bottom: 1px solid var(--accent);
-        }
-
-        .hero .location-info a:hover {
-            opacity: 0.8;
-        }
-
-        .tagline {
-            font-size: 1rem;
-            line-height: 1.8;
-            color: var(--text-secondary);
-            max-width: 700px;
-            margin: 2rem auto;
-            padding: 1.5rem;
-            background-color: var(--bg-secondary);
-            border-left: 4px solid var(--accent);
-            border-radius: 4px;
-        }
-
-        /* Section Styles */
-        section {
-            margin-bottom: 3rem;
-        }
-
-        h2 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.75rem;
-            border-bottom: 2px solid var(--accent);
-            font-family: var(--font-display);
-            letter-spacing: -0.01em;
-        }
-
-        h3 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-top: 1.5rem;
-            margin-bottom: 0.5rem;
-            color: var(--text-primary);
-        }
-
-        /* Experience & Jobs */
-        .job {
-            margin-bottom: 2.5rem;
-            padding-left: 1.5rem;
-            border-left: 3px solid var(--accent);
-        }
-
-        .job-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 0.5rem;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .job-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-
-        .company {
-            font-weight: 700;
-            color: var(--accent);
-        }
-
-        .job-meta {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            margin-bottom: 1rem;
-        }
-
-        .job-description {
-            font-size: 0.95rem;
-            line-height: 1.7;
-            color: var(--text-secondary);
-        }
-
-        .job-description ul {
-            list-style: none;
-            margin: 1rem 0;
-        }
-
-        .job-description li {
-            margin-bottom: 0.75rem;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-
-        .job-description li:before {
-            content: "▸";
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-            font-weight: bold;
-        }
-
-        /* Impact Boxes */
-        .impact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .impact-box {
-            padding: 1.5rem;
-            background-color: var(--bg-secondary);
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            text-align: center;
-        }
-
-        .impact-box strong {
-            display: block;
-            color: var(--accent);
-            font-size: 0.9rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 0.5rem;
-        }
-
-        .impact-box p {
-            font-size: 0.95rem;
-            line-height: 1.6;
-            color: var(--text-secondary);
-        }
-
-        /* Skills Grid */
-        .skills-group {
-            margin-bottom: 2rem;
-        }
-
-        .skills-group h4 {
-            font-size: 0.9rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--accent);
-            margin-bottom: 0.75rem;
-        }
-
-        .skills-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-            font-size: 0.9rem;
-            line-height: 1.6;
-            color: var(--text-secondary);
-        }
-
-        /* Tables */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 2rem;
-            font-size: 0.95rem;
-        }
-
-        th, td {
-            padding: 1rem;
-            text-align: left;
-            border-bottom: 1px solid var(--border);
-        }
-
-        th {
-            background-color: var(--bg-secondary);
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-
-        tr:hover {
-            background-color: var(--bg-secondary);
-        }
-
-        td em {
-            color: var(--text-secondary);
-            font-style: normal;
-            font-weight: 500;
-        }
-
-        /* Timeline Diagram */
-        .timeline {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .timeline-item {
-            padding: 1.5rem;
-            background-color: var(--bg-secondary);
-            border: 2px solid var(--accent);
-            border-radius: 6px;
-            text-align: center;
-        }
-
-        .timeline-item h4 {
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 0.5rem;
-            font-size: 1rem;
-        }
-
-        .timeline-item .role {
-            color: var(--accent);
-            font-weight: 600;
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .timeline-item .dates {
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-        }
-
-        .timeline-item.highlight {
-            border-color: #FF9500;
-            background-color: rgba(255, 149, 0, 0.08);
-        }
-
-        .timeline-item.highlight .role {
-            color: #FF9500;
-        }
-
-        /* Architecture Diagram */
-        .diagram {
-            background-color: var(--bg-secondary);
-            padding: 2rem;
-            border-radius: 6px;
-            overflow-x: auto;
-            margin-bottom: 2rem;
-        }
-
-        .diagram pre {
-            margin: 0;
-            font-family: var(--font-mono);
-            font-size: 0.85rem;
-            line-height: 1.4;
-            color: var(--text-secondary);
-            white-space: pre-wrap;
-            word-break: break-word;
-        }
-
-        /* Awards & Recognition */
-        .award {
-            padding: 1.5rem;
-            background-color: var(--accent-light);
-            border-left: 4px solid var(--accent);
-            margin-bottom: 1.5rem;
-            border-radius: 4px;
-        }
-
-        .award strong {
-            display: block;
-            color: var(--text-primary);
-            margin-bottom: 0.5rem;
-            font-size: 1rem;
-        }
-
-        .award p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            margin-top: 4rem;
-            padding-top: 2rem;
-            border-top: 2px solid var(--border);
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-
-        /* Links */
-        a {
-            color: var(--accent);
-            text-decoration: none;
-            border-bottom: 1px solid transparent;
-            transition: border-color 0.2s;
-        }
-
-        a:hover {
-            border-bottom-color: var(--accent);
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero .subtitle {
-                font-size: 1rem;
-            }
-
-            h2 {
-                font-size: 1.25rem;
-            }
-
-            .job-header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .location-info {
-                gap: 1rem !important;
-            }
-
-            table {
-                font-size: 0.85rem;
-            }
-
-            th, td {
-                padding: 0.75rem;
-            }
-        }
-
-        /* Print styles */
-        @media print {
-            body {
-                background-color: white;
-                color: black;
-            }
-
-            a {
-                color: inherit;
-                border-bottom: none;
-            }
-        }
-    </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Resume of Amir Kashani, senior mobile engineer and systems architect with experience in iOS, Android, C++, connected systems, backend services, data, and AI.">
+    <meta name="theme-color" content="#07111f">
+    <title>Amir Kashani — Senior Mobile Engineer &amp; Systems Architect</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <img src="avatar.png" alt="Amir Kashani" class="avatar">
-            <h1>Amir Kashani</h1>
-            <div class="subtitle">Cross-Platform Mobile Engineering Lead · Systems Architect</div>
-            <div class="location-info">
-                <span>📍 Munich, Germany</span>
-                <a href="mailto:kashaniamirabbas@gmail.com">kashaniamirabbas@gmail.com</a>
-                <a href="https://github.com/aakpro" target="_blank">github.com/aakpro</a>
+<body class="resume-body">
+    <a class="skip-link" href="#resume-content">Skip to resume</a>
+    <header class="site-header">
+        <nav class="nav wrap" aria-label="Resume navigation">
+            <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">AK</span><span>Back to portfolio</span></a>
+            <div class="nav-links">
+                <a href="mailto:kashaniamirabbas@gmail.com">Email</a>
+                <a href="https://www.linkedin.com/in/amirabbaskashani" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a class="button button-quiet nav-resume" href="#experience">Experience</a>
             </div>
-            <p style="text-align: center; font-size: 0.9rem; margin-top: 1.5rem; color: var(--text-secondary);">
-                <a href="#profile" style="margin-right: 1rem;">Profile</a> •
-                <a href="#impact" style="margin: 0 1rem;">Impact</a> •
-                <a href="#experience" style="margin: 0 1rem;">Experience</a> •
-                <a href="#independent-work" style="margin: 0 1rem;">Independent Work</a> •
-                <a href="#automotive" style="margin: 0 1rem;">Automotive</a> •
-                <a href="#skills" style="margin: 0 1rem;">Skills</a> •
-                <a href="#projects" style="margin: 0 1rem;">Projects</a> •
-                <a href="#education" style="margin: 0 1rem;">Education</a> •
-                <a href="#awards" style="margin-left: 1rem;">Awards</a>
-            </p>
-            <div class="tagline">
-                <strong>Cross-platform mobile engineering lead with 10+ years spanning iOS, Android, Web, and shared C++ cores.</strong> Led mobile engineering for Filimo, a leading Middle East video-on-demand platform with over 1 million users, and previously co-founded a startup that shipped three platforms in four months. Currently a senior engineer on a connected-vehicle program building CCC 3.0 Digital Key and Apple CarKey integrations.
-            </div>
-        </section>
+        </nav>
+    </header>
 
-        <!-- Impact Section -->
-        <section id="impact">
-            <h2>Proven Impact</h2>
-            <div class="impact-grid">
-                <div class="impact-box">
-                    <strong>10+ Years Cross-Platform Leadership</strong>
-                    <p>Mobile, web, and C++ systems architecture across entertainment, automotive, and startups</p>
-                </div>
-                <div class="impact-box">
-                    <strong>0-to-1 Startup, Scaled to 9K DAU</strong>
-                    <p>Co-founded BeautyTime; shipped Web, iOS, and Android in 4 months</p>
-                </div>
-                <div class="impact-box">
-                    <strong>High-Scale Entertainment: +30% Retention</strong>
-                    <p>Led Filimo's mobile architecture rewrite for millions of subscribers</p>
+    <div class="resume-actions" aria-label="Resume actions">
+        <a class="button button-quiet" href="index.html">← Portfolio</a>
+        <button class="button button-primary" type="button" onclick="window.print()">Print / Save PDF</button>
+    </div>
+
+    <main class="resume-shell" id="resume-content">
+        <header class="resume-top">
+            <div class="resume-top-content">
+                <p class="eyebrow">Resume</p>
+                <h1>Amir Kashani</h1>
+                <div class="resume-title">Senior Mobile Engineer · C++ &amp; Connected Systems</div>
+                <div class="contact-row">
+                    <span>Munich, Germany</span>
+                    <a href="mailto:kashaniamirabbas@gmail.com">kashaniamirabbas@gmail.com</a>
+                    <a href="https://github.com/aakpro" target="_blank" rel="noopener noreferrer">github.com/aakpro</a>
+                    <a href="https://www.linkedin.com/in/amirabbaskashani" target="_blank" rel="noopener noreferrer">linkedin.com/in/amirabbaskashani</a>
                 </div>
             </div>
-        </section>
+            <img class="resume-photo" src="avatar.png" alt="Portrait of Amir Kashani" width="252" height="252">
+        </header>
 
-        <!-- Profile Section -->
-        <section id="profile">
-            <h2>Profile</h2>
-            <p style="margin-bottom: 1.5rem; line-height: 1.8;">I architect scalable systems, govern interface boundaries, and build high-velocity engineering teams. My background is cross-platform — operating across <strong>mobile (iOS/Android), web, shared C++ cores, and embedded hardware interfaces</strong>.</p>
+        <div class="resume-content">
+            <aside class="resume-aside" aria-label="Skills and education">
+                <section class="resume-section">
+                    <h2>Core stack</h2>
+                    <div class="skill-group"><h3>Mobile</h3><p>Swift · Objective-C · iOS · UIKit · SwiftUI · Combine · Async/Await · AVFoundation · Core Data · Android interoperability</p></div>
+                    <div class="skill-group"><h3>Systems &amp; connectivity</h3><p>C++ · BLE · NFC · UWB · Secure Element · Apple CarKeyKit · CCC Digital Key 3.0 · embedded interfaces</p></div>
+                    <div class="skill-group"><h3>Architecture</h3><p>Modular architecture · DDD · interface contracts · performance profiling · API governance · CI/CD · technical leadership</p></div>
+                    <div class="skill-group"><h3>Backend, data &amp; AI</h3><p>Python · REST · GraphQL · SQLite · backend services · big-data research · machine learning · multimodal AI · Whisper · pyannote · LLM workflows</p></div>
+                </section>
 
-            <ul style="list-style: none; margin-bottom: 1.5rem;">
-                <li style="margin-bottom: 1rem; padding-left: 1.5rem; position: relative;">
-                    <span style="position: absolute; left: 0; color: var(--accent); font-weight: bold;">▸</span>
-                    <strong>Cross-Platform Engineering:</strong> Whether synchronizing multi-platform releases (Web, iOS, Android) as a startup CTO, leading mobile engineering for a top VOD platform, or contributing to a shared C++ BLE core for vehicle connectivity, I design modular systems with explicit interface contracts that let teams work in parallel.
-                </li>
-                <li style="margin-bottom: 1rem; padding-left: 1.5rem; position: relative;">
-                    <span style="position: absolute; left: 0; color: var(--accent); font-weight: bold;">▸</span>
-                    <strong>High-Scale Entertainment (VOD):</strong> Led mobile engineering for Filimo (1M+ users, ~400K subscribers), addressing playback latency, adaptive bitrate delivery, DRM licensing, and recommendation UX under variable network conditions.
-                </li>
-                <li style="margin-bottom: 1rem; padding-left: 1.5rem; position: relative;">
-                    <span style="position: absolute; left: 0; color: var(--accent); font-weight: bold;">▸</span>
-                    <strong>Automotive & Hardware Integration:</strong> Work on vehicle-to-device connectivity as part of a connected-mobility engineering team, integrating CCC 3.0 Digital Key specifications and Apple CarKey.
-                </li>
-                <li style="margin-bottom: 1rem; padding-left: 1.5rem; position: relative;">
-                    <span style="position: absolute; left: 0; color: var(--accent); font-weight: bold;">▸</span>
-                    <strong>Entrepreneurial Execution:</strong> Co-founded and grew a startup from zero to a working multi-platform product under tight runway constraints.
-                </li>
-                <li style="margin-bottom: 1rem; padding-left: 1.5rem; position: relative;">
-                    <span style="position: absolute; left: 0; color: var(--accent); font-weight: bold;">▸</span>
-                    <strong>AI as an Engineering Lever:</strong> In my own time, I build tooling that removes development toil — media classification pipelines, crash triage assistance, and automated transcription workflows.
-                </li>
-            </ul>
-        </section>
+                <section class="resume-section">
+                    <h2>Education</h2>
+                    <div class="education-item"><strong>M.Sc. E-Commerce</strong><span>Iran University of Science and Technology · 2015–2018</span><span>Thesis: Assessing the business value of big-data analysis in firms</span></div>
+                    <div class="education-item"><strong>B.Sc. Software Engineering</strong><span>Shahid Beheshti University · 2008–2013</span></div>
+                </section>
 
-        <!-- Career Journey -->
-        <section id="career">
-            <h2>Career Journey</h2>
-            <div class="diagram">
-                <pre style="font-size: 0.75rem; line-height: 1.3;">ivysoft (2013–2015)           →  Sheypoor (2015–2017)  →  BeautyTime: 0→9K DAU  →  Filimo: 1M+ Users   →  Quartett Mobile
-Mobile Developer                    Senior Engineer              Co-Founder & CTO         Mobile Lead           Senior Connected Mobility Engineer
-                                                                 (2017–2020)              (2020–2022)           (2022–Present)
-                                                                 ━━━━━━━━━━━━━━━━━━━━━━━━  ━━━━━━━━━━━━━━━━━━━━  (CCC 3.0, CarKey, C++ BLE)
+                <section class="resume-section">
+                    <h2>Languages</h2>
+                    <div class="education-item"><strong>English</strong><span>Professional working proficiency</span></div>
+                    <div class="education-item"><strong>Persian</strong><span>Native</span></div>
+                </section>
 
-<strong>Since 2024:</strong> Independent AI tooling projects alongside primary role
-                ↓
-Automated Video Classification · MacSpyCam · Intelligent Bug Triage · AI Transcription · Codebase Knowledge Graphs</pre>
+                <section class="resume-section">
+                    <h2>Recognition</h2>
+                    <div class="award-item"><strong>Apple App Store feature</strong><span>Recordium · featured in 110 countries · Top 10 Business apps worldwide</span></div>
+                    <div class="award-item"><strong>Harkat Festival</strong><span>Selected Scientific Association Award · 2011</span></div>
+                </section>
+            </aside>
+
+            <div class="resume-main">
+                <section class="resume-section">
+                    <h2>Profile</h2>
+                    <p class="summary">Senior engineer with 10+ years centered on mobile products across iOS and Android, followed by shared C++ systems and device connectivity. I have led mobile architecture for a large video platform, built cross-platform products as a founder, and now work on secure digital vehicle keys. My broader experience includes backend and API design, big-data research, machine-learning work, and hands-on AI tooling.</p>
+                </section>
+
+                <section class="resume-section" id="experience">
+                    <h2>Experience</h2>
+
+                    <article class="experience">
+                        <div class="experience-head"><h3>Senior Connected Mobility Engineer · <span class="company">Quartett Mobile</span></h3><time class="date">MAR 2022 — PRESENT</time></div>
+                        <p class="role-meta">Munich · Digital vehicle key and connected systems</p>
+                        <ul>
+                            <li>Integrated <strong>Apple CarKey and CarKeyKit</strong> flows covering owner pairing, Apple Wallet provisioning, cryptographic key sharing, and vehicle communication.</li>
+                            <li>Implemented CCC Digital Key 3.0 concepts across <strong>NFC, BLE, UWB, and Secure Element</strong> boundaries while collaborating with mobile, firmware, ECU, and cloud teams.</li>
+                            <li>Co-developed a <strong>shared C++ BLE core</strong> for iOS and Android, reducing protocol divergence and duplicated maintenance.</li>
+                            <li>Drove interface alignment, contract testing, quality gates, and structured reviews across distributed teams.</li>
+                        </ul>
+                    </article>
+
+                    <article class="experience">
+                        <div class="experience-head"><h3>Mobile Engineering Lead · <span class="company">SabaIdea Group</span></h3><time class="date">MAR 2020 — MAR 2022</time></div>
+                        <p class="role-meta">Filimo · Televika · Zabia · Video streaming</p>
+                        <ul>
+                            <li>Led mobile engineering for Filimo, a VOD platform with <strong>1M+ users</strong>, plus international streaming products Televika and Zabia.</li>
+                            <li>Moved the mobile client toward modular Clean Architecture and MVVM, enabling parallel development across feature teams.</li>
+                            <li>Reduced video startup from roughly <strong>4–5 seconds to about 1 second</strong> through playback, caching, CDN failover, and ABR improvements.</li>
+                            <li>Delivered offline DRM playback and helped improve discovery, watch-history synchronization, release automation, and regression control.</li>
+                            <li>Hired and coached engineers while coordinating roadmap and API boundaries across product, mobile, backend, and data teams.</li>
+                        </ul>
+                    </article>
+
+                    <article class="experience">
+                        <div class="experience-head"><h3>Co-Founder &amp; CTO · <span class="company">BeautyTime</span></h3><time class="date">NOV 2017 — MAR 2020</time></div>
+                        <p class="role-meta">Marketplace · Multi-platform product and backend systems</p>
+                        <ul>
+                            <li>Architected and shipped consumer and business products across <strong>web, iOS, and Android in four months</strong>.</li>
+                            <li>Built the supporting backend and product systems and scaled the marketplace to <strong>9,000+ peak daily active users</strong>.</li>
+                            <li>Built and led a six-person cross-functional team spanning engineering, product, marketing, and sales.</li>
+                        </ul>
+                    </article>
+
+                    <article class="experience">
+                        <div class="experience-head"><h3>Senior Engineer · <span class="company">Sheypoor</span></h3><time class="date">AUG 2015 — OCT 2017</time></div>
+                        <p class="role-meta">Large classifieds marketplace · iOS and platform APIs</p>
+                        <ul>
+                            <li>Architected and shipped Sheypoor iOS v2 in <strong>three months</strong> ahead of a funding round.</li>
+                            <li>Partnered with Android, web, and backend teams on v3 API contracts that contributed to a <strong>20% engagement improvement</strong>.</li>
+                            <li>Promoted to Senior Developer within twelve months based on delivery and technical leadership.</li>
+                        </ul>
+                    </article>
+
+                    <article class="experience">
+                        <div class="experience-head"><h3>Mobile Developer · <span class="company">ivysoft</span></h3><time class="date">JUN 2013 — JAN 2015</time></div>
+                        <p class="role-meta">iOS products across finance, payments, and media</p>
+                        <ul>
+                            <li>Improved launch performance in production mobile apps and helped move products from paid downloads to freemium models using user and funnel data.</li>
+                            <li>Shipped work for Rahavard365, Digipay, Pacatio/Foxdoor, and MusicMa.</li>
+                        </ul>
+                    </article>
+                </section>
+
+                <section class="resume-section">
+                    <h2>Independent products &amp; AI</h2>
+                    <div class="project-list">
+                        <article class="project"><h3>Recordium</h3><p>Independent iOS audio recorder featured by Apple, The Guardian, The Telegraph, and The Next Web.</p></article>
+                        <article class="project"><h3>Multimodal video classification</h3><p>Qwen-based pipeline for frame extraction, scene understanding, and metadata generation; reduced manual labeling effort by roughly 80%.</p></article>
+                        <article class="project"><h3>AI crash triage</h3><p>Maps stack traces and error signatures to code history to suggest likely causes and fixes.</p></article>
+                        <article class="project"><h3>Transcription &amp; diarization</h3><p>Whisper and pyannote workflows with structured outputs for multi-speaker media.</p></article>
+                        <article class="project"><h3>Codebase knowledge graphs</h3><p>Deterministic AST parsing and dependency graphs for navigating unfamiliar repositories.</p></article>
+                        <article class="project"><h3>MacSpyCam</h3><p>Privacy-focused macOS security utility with local motion detection and low-latency alerts.</p></article>
+                    </div>
+                </section>
+
+                <section class="resume-section">
+                    <h2>Academic &amp; community work</h2>
+                    <div class="education-item"><strong>E-Commerce Laboratory · IUST</strong><span>Research, seminars, and presentations on big data, text mining, and social-network analysis.</span></div>
+                    <div class="education-item"><strong>SM-Art Robotic Group</strong><span>Autonomous algorithms for RoboCup Small Size League.</span></div>
+                    <div class="education-item"><strong>Chanteh Group</strong><span>Designed and taught a Swift software-development curriculum.</span></div>
+                </section>
             </div>
-            <p style="margin-top: 1.5rem; color: var(--text-secondary); font-size: 0.95rem;">Since 2024, I've also been building independent AI tooling projects alongside my primary role.</p>
-        </section>
-
-        <!-- Experience -->
-        <section id="experience">
-            <h2>Experience</h2>
-
-            <div class="job">
-                <div class="job-header">
-                    <span class="job-title">Senior Connected Mobility Engineer</span>
-                    <span class="company">Quartett Mobile</span>
-                </div>
-                <div class="job-meta">March 2022 – Present · Munich · Connected Vehicle & Digital Key Systems</div>
-                <div class="job-description">
-                    <p>Delivering digital vehicle key and connectivity systems as part of a cross-platform automotive engineering team, collaborating across iOS, Android, vehicle firmware, ECU, and cloud services:</p>
-                    <ul>
-                        <li><strong>Delivered Digital Car Key Systems:</strong> Integrated Apple's CarKeyKit framework to support Apple CarKey, handling owner pairing, Apple Wallet pass provisioning, cryptographic key sharing, and vehicle telematics via CarKeySession.</li>
-                        <li><strong>Integrated CCC 3.0 Standard Protocols:</strong> Implemented vehicle access protocols matching Car Connectivity Consortium (CCC 3.0) standards across NFC (tap-to-unlock / engine start), BLE proximity detection, UWB distance ranging, and Secure Element (SE) certificate exchange, working closely with vehicle ECU and firmware teams.</li>
-                        <li><strong>Unified Cross-Platform Vehicle Connectivity:</strong> Co-developed and maintained a shared cross-platform C++ BLE connectivity core deployed across both iOS and Android, removing protocol divergence and duplicate maintenance work between platforms.</li>
-                        <li><strong>Resolved Cross-Org Delivery Blockers:</strong> Drove alignment between mobile squads, hardware test counterparts, and distributed product/design stakeholders, establishing clearer interface boundaries that unblocked stalled delivery milestones.</li>
-                        <li><strong>Instituted Higher-Rigor Engineering Practices:</strong> Championed automated quality gates, contract testing, and structured code reviews across the mobile team, removing single-person deployment gates.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="job">
-                <div class="job-header">
-                    <span class="job-title">Team Lead of Mobile Engineering</span>
-                    <span class="company">SabaIdea Group (Filimo · Televika · Zabia)</span>
-                </div>
-                <div class="job-meta">March 2020 – March 2022 · Entertainment & High-Scale Video Streaming</div>
-                <div class="job-description">
-                    <p>Led cross-platform mobile engineering for <strong>Filimo</strong> (a leading video-on-demand platform in the Middle East, with over 1 million users) along with international streaming services Televika and Zabia, delivering a <strong>30% lift in retention and load performance</strong> through a phased architecture rewrite:</p>
-                    <ul>
-                        <li><strong>Modularized the Mobile Architecture:</strong> Led the rewrite of Filimo's mobile client into a modular Clean Architecture + MVVM codebase, decoupling the legacy monolith into isolated feature frameworks that enabled independent compilation and parallel squad development.</li>
-                        <li><strong>Cut Video Startup Time from 4-5s to ~1s:</strong> Re-engineered video playback infrastructure with optimized AVPlayer caching, CDN failover logic, and adaptive bitrate (ABR) streaming to hold up under erratic, low-bandwidth network conditions.</li>
-                        <li><strong>Improved Content Discovery & Watch Time:</strong> Partnered with product and data science to design recommendation surfaces, personalized home feeds, and client-side watch-history sync.</li>
-                        <li><strong>Governed Multi-Squad Interface Boundaries:</strong> Acted as the primary technical liaison between engineering and product leadership — shaping roadmaps, negotiating feature scope, and preventing architectural drift across mobile clients.</li>
-                        <li><strong>Delivered Offline DRM Playback:</strong> Built the offline download and storage subsystem with DRM license renewal compliance, encrypted local caching, and storage quota management.</li>
-                        <li><strong>Cut Release Regression Cycles by 40%:</strong> Established CI/CD automation, automated test suites, and standardized release gating criteria, accelerating shipping cadence while cutting production bug escapes.</li>
-                        <li><strong>Grew the Engineering Team:</strong> Hired, onboarded, and coached junior and mid-level engineers into independent technical leads, restructuring collaboration across engineering, product, and UI/UX.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="job">
-                <div class="job-header">
-                    <span class="job-title">Co-Founder & CTO</span>
-                    <span class="company">BeautyTime</span>
-                </div>
-                <div class="job-meta">November 2017 – March 2020 · E-Commerce & Multi-Platform Scheduling Startup</div>
-                <div style="margin-bottom: 1rem;">
-                    <span style="display: inline-block; background-color: var(--accent); color: white; padding: 0.3rem 0.75rem; border-radius: 4px; font-size: 0.85rem; font-weight: 600;">9K DAU | 3 Platforms | 4 Months</span>
-                </div>
-                <div class="job-description">
-                    <p>Co-founded, architected, and scaled an e-commerce appointment marketplace, owning strategy, product, technical systems, and organizational execution from day zero:</p>
-                    <ul>
-                        <li><strong>Built & Shipped 3 Platforms in 4 Months:</strong> Architected and launched two complementary products across <strong>Web, iOS, and Android</strong> within 4 months — consumer booking engine <em>BeautyTime</em> and B2B staff scheduling suite <em>Beautter</em>.</li>
-                        <li><strong>Scaled to 9,000+ Peak Daily Active Users:</strong> Designed backends and client apps that handled rapid acquisition spikes during promotional campaigns without downtime.</li>
-                        <li><strong>Built a 6-Person Cross-Functional Team:</strong> Hired and led engineering, product, marketing, and sales, structuring workflows so product lines could iterate without founder-level micromanagement.</li>
-                        <li><strong>Managed Growth Under Capital Constraints:</strong> Continually aligned technical architecture with business KPIs, cut vanity scope, and established key commercial vendor partnerships.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="job">
-                <div class="job-header">
-                    <span class="job-title">Senior Engineer</span>
-                    <span class="company">Sheypoor</span>
-                </div>
-                <div class="job-meta">August 2015 – October 2017 · Leading Classifieds Marketplace (350+ Employees)</div>
-                <div class="job-description">
-                    <ul>
-                        <li><strong>Shipped iOS v2 Ahead of a Funding Round:</strong> Architected and deployed Sheypoor iOS v2 in <strong>3 months</strong>, turning around user churn and providing mobile metrics that supported a venture financing round.</li>
-                        <li><strong>Promoted to Senior Developer in 12 Months:</strong> Ahead of the company's standard trajectory, based on cross-platform execution and technical leadership.</li>
-                        <li><strong>Boosted Platform Engagement by 20%:</strong> Partnered with web, Android, and backend teams to design v3 API contracts that improved user engagement.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="job">
-                <div class="job-header">
-                    <span class="job-title">Mobile Developer</span>
-                    <span class="company">ivysoft</span>
-                </div>
-                <div class="job-meta">June 2013 – January 2015</div>
-                <div class="job-description">
-                    <ul>
-                        <li><strong>Cut Launch Latency:</strong> Refactored and eliminated bottlenecks across two flagship mobile apps.</li>
-                        <li><strong>Drove Revenue & Download Growth:</strong> Led the data-driven migration from paid upfront downloads to an in-app freemium model by mining user reviews and funnel drop-off analytics.</li>
-                        <li>Also shipped mobile work for Rahavard365 (real-time stock market data), Digipay and Pacatio/Foxdoor (digital payments), and MusicMa (music streaming) during this period.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="job">
-                <div class="job-header">
-                    <span class="job-title">Recordium — Independent iOS App</span>
-                    <span class="company">2013</span>
-                </div>
-                <div class="job-description">
-                    <p><strong>Featured by Apple App Store</strong> as “Best Solution for Audio Recording in Smartphones”; featured in 110 countries, ranked among the top 10 Business Apps worldwide, and covered by <em>The Guardian</em>, <em>The Telegraph</em>, and <em>The Next Web</em>.</p>
-                    <p>Built and shipped an audio recording app for iOS independently of my employment at the time.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Independent Projects -->
-        <section id="independent-work">
-            <h2>Independent Projects & AI Tooling</h2>
-            <p style="margin-bottom: 1.5rem; color: var(--text-secondary);">Personal projects and open-source exploration alongside my primary role, 2024 – Present. Not employment.</p>
-
-            <ul style="list-style: none;">
-                <li style="margin-bottom: 1.2rem; padding-left: 1.5rem; position: relative;">
-                    <span style="position: absolute; left: 0; color: var(--accent); font-weight: bold;">▸</span>
-                    <strong>Automated Video Classification Pipeline:</strong> Cut manual labeling effort by roughly <strong>80%</strong> for media workflows by building a multimodal video classification pipeline (Qwen) that orchestrates frame extraction, scene understanding, and structured metadata tagging.
-                </li>
-                <li style="margin-bottom: 1.2rem; padding-left: 1.5rem; position: relative;">
-                    <span style="position: absolute; left: 0; color: var(--accent); font-weight: bold;">▸</span>
-                    <strong>MacSpyCam Security System:</strong> Built MacSpyCam, a privacy-first macOS security tool with local-only processing, motion detection heuristics, configurable event thresholds, and low-latency alerting.
-                </li>
-                <li style="margin-bottom: 1.2rem; padding-left: 1.5rem; position: relative;">
-                    <span style="position: absolute; left: 0; color: var(--accent); font-weight: bold;">▸</span>
-                    <strong>Intelligent Bug Triage Pipeline:</strong> Cut typical crash-triage turnaround from around 30 minutes to under 5 by building an LLM-powered crash analyzer that maps stack traces and error signatures to commit history to suggest root causes and fixes.
-                </li>
-                <li style="margin-bottom: 1.2rem; padding-left: 1.5rem; position: relative;">
-                    <span style="position: absolute; left: 0; color: var(--accent); font-weight: bold;">▸</span>
-                    <strong>AI Media Transcription Workflows:</strong> Evaluated and integrated Whisper + pyannote multi-speaker diarization pipelines (building on <a href="https://github.com/kaixxx/noScribe" target="_blank">noScribe</a>) with custom output schemas to speed up transcript delivery for interviews and content pipelines.
-                </li>
-                <li style="margin-bottom: 1.2rem; padding-left: 1.5rem; position: relative;">
-                    <span style="position: absolute; left: 0; color: var(--accent); font-weight: bold;">▸</span>
-                    <strong>Codebase Knowledge Graphs:</strong> Used deterministic AST parsing tools (<a href="https://github.com/Graphify-Labs/graphify" target="_blank">Graphify</a>) to navigate unfamiliar codebases and dependency trees without vector database overhead, speeding up multi-repo comprehension.
-                </li>
-            </ul>
-        </section>
-
-        <!-- Automotive Architecture -->
-        <section id="automotive">
-            <h2>Automotive Connectivity Architecture</h2>
-            <p style="margin-bottom: 1.5rem; color: var(--text-secondary); font-style: italic;">Reference architecture for the CCC Digital Key 3.0 &amp; Apple CarKey ecosystem — illustrating the boundary contracts between the mobile layer, hardware security modules, and vehicle gateway. This is a generic representation of the kind of automotive digital-key system I work on professionally, not a specific client program.</p>
-            <div class="diagram">
-                <pre>Cross-Platform Client Architecture        Device Security & Hardware          Vehicle Hardware & OEM Gateway
-┌─────────────────────────────────────┐   ┌──────────────────────────┐   ┌──────────────────────────────┐
-│         SwiftUI / Jetpack Compose   │   │   Secure Element (SE)    │   │ B-Pillar NFC Transceiver     │
-│         / UIKit Views               │   │   ↓                      │   │ (Tap to Unlock/Engine Start) │
-│                 ↓                   │   │ Key Pair & Owner         │   │           ↔ CCC APDU         │
-│  ┌─Digital Key Coordinator──────┐  │   │ Attestation              │   │                       ↓      │
-│  │                              │  │   │   ↓                      │   │        OEM Gateway & ECU    │
-│  ├─→ CarKeySession/CarKeyKit ──┤  │   │ Near Field Communication │   └──────────────────────────────┘
-│  ├─→ Shared C++ BLE Core ──────┤  │   │ Ultra-Wideband Ranging   │
-│  └─→ Apple Wallet PassKit ─────┘  │   │                          │   Vehicle BLE/UWB Anchors
-└─────────────────────────────────────┘   └──────────────────────────┘   ←→ Encrypted CCC 3.0 Channel
-                                                    ↑                        ↑ Secure Time-of-Flight
-                                                 Integration Points       Ranging</pre>
-            </div>
-        </section>
-
-        <!-- Skills -->
-        <section id="skills">
-            <h2>Skills</h2>
-
-            <div class="skills-group">
-                <h4>System Design & Cross-Platform Governance</h4>
-                <div class="skills-list">
-                    Cross-Platform Architecture · System Decomposition · Interface Contract Design · API Governance · Domain-Driven Design (DDD) · Modular Feature Frameworks · Performance Profiling · Architectural RFCs
-                </div>
-            </div>
-
-            <div class="skills-group">
-                <h4>Core Technologies & Languages</h4>
-                <div class="skills-list">
-                    Swift · Objective-C · C++ · Python · Kotlin / Android Interop · SwiftUI · UIKit · Combine · Async/Await · GCD · SQLite · Core Data · AVFoundation · REST · GraphQL
-                </div>
-            </div>
-
-            <div class="skills-group">
-                <h4>Entertainment & Streaming at Scale</h4>
-                <div class="skills-list">
-                    VOD Platform Architecture · Adaptive Bitrate (ABR) · AVPlayer Engine Design · CDN Failover · Offline DRM Synchronization · Content Discovery & Recommendation UX · Funnel Telemetry
-                </div>
-            </div>
-
-            <div class="skills-group">
-                <h4>Automotive & Hardware Systems</h4>
-                <div class="skills-list">
-                    Apple CarKeyKit · CCC Digital Key 3.0 · PassKit (Apple Wallet) · NFC Transceivers · Bluetooth Low Energy (BLE) · Ultra-Wideband (UWB) Ranging · Secure Element (SE) Attestation
-                </div>
-            </div>
-
-            <div class="skills-group">
-                <h4>AI Operations & Developer Velocity</h4>
-                <div class="skills-list">
-                    AI-Augmented Development (Claude, Cursor, Copilot, Agentic Workflows) · Multimodal AI (Qwen) · OpenAI Whisper · pyannote Diarization · AST Parsing & Knowledge Graphs · Automated Bug Triage
-                </div>
-            </div>
-
-            <div class="skills-group">
-                <h4>Leadership & Venture Execution</h4>
-                <div class="skills-list">
-                    0-to-1 Company Building · Technical Hiring & Interviewing · Cross-Functional Team Leadership · 1:1 Mentoring · Product Roadmapping · KPI & Metrics Alignment · Async Decision-Making
-                </div>
-            </div>
-        </section>
-
-        <!-- Selected Projects Table -->
-        <section id="projects">
-            <h2>Selected Projects</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Project</th>
-                        <th>Domain</th>
-                        <th>Role</th>
-                        <th>Key Achievements</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Filimo / Televika</strong></td>
-                        <td><em>Entertainment / VOD</em></td>
-                        <td><em>Mobile Lead (2020–2022)</em></td>
-                        <td>Re-architected streaming platform with 1M+ users; <strong>+30% retention</strong></td>
-                    </tr>
-                    <tr>
-                        <td><strong>BeautyTime & Beautter</strong></td>
-                        <td><em>E-Commerce</em></td>
-                        <td><em>Co-Founder & CTO (2017–2020)</em></td>
-                        <td>Shipped <strong>3 platforms in 4 months</strong>; scaled to <strong>9K+ DAU</strong></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Quartett Digital Key</strong></td>
-                        <td><em>Automotive Mobility</em></td>
-                        <td><em>Senior Engineer (2022–Present)</em></td>
-                        <td>Apple CarKey & CCC 3.0 integration; co-developed shared C++ BLE core across iOS & Android</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Qwen Video Engine</strong></td>
-                        <td><em>Multimodal AI</em></td>
-                        <td><em>Builder (2024–Present)</em></td>
-                        <td>Cut manual video tagging effort by roughly <strong>80%</strong></td>
-                    </tr>
-                    <tr>
-                        <td><strong>MacSpyCam</strong></td>
-                        <td><em>AI / Security</em></td>
-                        <td><em>Builder (2024–Present)</em></td>
-                        <td>Privacy-first macOS security monitor with local motion detection and low-latency alerting</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Recordium</strong></td>
-                        <td><em>Audio Recording</em></td>
-                        <td><em>Independent (2013)</em></td>
-                        <td>🏆 <strong>Featured by Apple App Store</strong>; featured in 110 countries; Top 10 Business worldwide</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Sheypoor iOS v2</strong></td>
-                        <td><em>Marketplace</em></td>
-                        <td><em>Senior Engineer (2015–2017)</em></td>
-                        <td>Shipped v2 in <strong>3 months</strong> ahead of a funding round; <strong>+20% engagement</strong></td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-
-        <!-- Education -->
-        <section id="education">
-            <h2>Education</h2>
-
-            <div class="job">
-                <div class="job-header">
-                    <span class="job-title">M.Sc. in E-Commerce</span>
-                    <span class="company">Iran University of Science and Technology (2015 – 2018)</span>
-                </div>
-                <div class="job-description">
-                    <p><strong>Thesis:</strong> <em>Assessing business value of big data analysis in firms</em></p>
-                </div>
-            </div>
-
-            <div class="job">
-                <div class="job-header">
-                    <span class="job-title">B.Sc. in Software Engineering</span>
-                    <span class="company">Shahid Beheshti University (2008 – 2013)</span>
-                </div>
-                <div class="job-description">
-                    <p><strong>Focus:</strong> Object-oriented analysis, architectural design, and software systems</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Awards & Recognition -->
-        <section id="awards">
-            <h2>Awards & Recognition</h2>
-
-            <div class="award">
-                <strong>🏆 Best Solution for Audio Recording in Smartphones — Recordium (Apple App Store, 2013)</strong>
-                <p>Officially featured globally by Apple, <em>The Next Web</em>, <em>The Guardian</em>, and <em>The Telegraph</em>.</p>
-                <p><strong>Top 10 Business Apps in 110 countries.</strong></p>
-            </div>
-
-            <div class="award">
-                <strong>Selected Scientific Association Award — Harkat Festival (2011)</strong>
-                <p>Head of the Scientific Association of Computer Engineering and Informatics Society.</p>
-            </div>
-        </section>
-
-        <!-- Community & Academic Work -->
-        <section>
-            <h2>Community & Academic Work</h2>
-            <ul style="list-style: none;">
-                <li style="margin-bottom: 1rem; padding-left: 1.5rem; position: relative;">
-                    <span style="position: absolute; left: 0; color: var(--accent); font-weight: bold;">▸</span>
-                    <strong>E-Commerce Laboratory (ECLab) — IUST:</strong> Academic research papers, seminars, and big data technology presentations.
-                </li>
-                <li style="margin-bottom: 1rem; padding-left: 1.5rem; position: relative;">
-                    <span style="position: absolute; left: 0; color: var(--accent); font-weight: bold;">▸</span>
-                    <strong>SM-Art Robotic Group:</strong> Autonomous algorithms for Small Size League (RoboCup).
-                </li>
-                <li style="padding-left: 1.5rem; position: relative;">
-                    <span style="position: absolute; left: 0; color: var(--accent); font-weight: bold;">▸</span>
-                    <strong>Chanteh Group:</strong> Authored and taught a software development curriculum in Swift.
-                </li>
-            </ul>
-        </section>
-
-        <!-- Languages -->
-        <section>
-            <h2>Languages</h2>
-            <ul style="list-style: none;">
-                <li style="margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative;">
-                    <span style="position: absolute; left: 0; color: var(--accent); font-weight: bold;">▸</span>
-                    <strong>English:</strong> Professional working proficiency
-                </li>
-                <li style="padding-left: 1.5rem; position: relative;">
-                    <span style="position: absolute; left: 0; color: var(--accent); font-weight: bold;">▸</span>
-                    <strong>Persian:</strong> Native proficiency
-                </li>
-            </ul>
-        </section>
-
-        <!-- Contact -->
-        <section>
-            <h2>Contact</h2>
-            <ul style="list-style: none;">
-                <li style="margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative;">
-                    <span style="position: absolute; left: 0; color: var(--accent); font-weight: bold;">▸</span>
-                    <strong>Email:</strong> <a href="mailto:kashaniamirabbas@gmail.com">kashaniamirabbas@gmail.com</a>
-                </li>
-                <li style="margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative;">
-                    <span style="position: absolute; left: 0; color: var(--accent); font-weight: bold;">▸</span>
-                    <strong>GitHub:</strong> <a href="https://github.com/aakpro" target="_blank">@aakpro</a>
-                </li>
-                <li style="padding-left: 1.5rem; position: relative;">
-                    <span style="position: absolute; left: 0; color: var(--accent); font-weight: bold;">▸</span>
-                    <strong>Location:</strong> Munich, Germany
-                </li>
-            </ul>
-        </section>
-
-        <footer>
-            <p>Built with ❤️ • Hosted on GitHub • Optimized for Dark & Light Mode</p>
-        </footer>
+        </div>
     </main>
 </body>
 </html>

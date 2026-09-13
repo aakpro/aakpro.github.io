@@ -1,98 +1,143 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amir Kashani — Mobile Engineer & Systems Architect</title>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, #0F1419 0%, #1A1A2E 100%);
-            color: #FFFFFF;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .container {
-            text-align: center;
-            padding: 2rem;
-            max-width: 600px;
-        }
-
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 0.5rem;
-            letter-spacing: -0.02em;
-            font-weight: 700;
-        }
-
-        .subtitle {
-            font-size: 1.25rem;
-            color: #14B8A6;
-            margin-bottom: 2rem;
-            font-weight: 500;
-        }
-
-        p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #A0AEC0;
-            margin-bottom: 2rem;
-        }
-
-        .cta {
-            display: inline-block;
-            padding: 1rem 2.5rem;
-            background-color: #0E7C7B;
-            color: #FFFFFF;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            border: 2px solid #0E7C7B;
-        }
-
-        .cta:hover {
-            background-color: transparent;
-            color: #14B8A6;
-            border-color: #14B8A6;
-        }
-
-        .links {
-            margin-top: 3rem;
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            font-size: 0.95rem;
-        }
-
-        .links a {
-            color: #14B8A6;
-            text-decoration: none;
-            border-bottom: 1px solid transparent;
-            transition: border-color 0.2s;
-        }
-
-        .links a:hover {
-            border-bottom-color: #14B8A6;
-        }
-    </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Amir Kashani is a senior mobile engineer and systems architect working across iOS, Android, C++, connected systems, backend services, data, and AI.">
+    <meta name="theme-color" content="#07111f">
+    <title>Amir Kashani — Mobile Engineer &amp; Systems Architect</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Amir Kashani</h1>
-        <div class="subtitle">Cross-Platform Mobile Engineer</div>
-        <p>Architecting scalable systems and building high-velocity engineering teams across iOS, Android, Web, and C++ since 2013.</p>
-        <a href="resume.html" class="cta">View Full Resume</a>
-        <div class="links">
-            <a href="https://github.com/aakpro" target="_blank">GitHub</a>
-            <a href="mailto:kashaniamirabbas@gmail.com">Email</a>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+        <nav class="nav wrap" aria-label="Primary navigation">
+            <a class="brand" href="index.html" aria-label="Amir Kashani, home">
+                <span class="brand-mark" aria-hidden="true">AK</span>
+                <span>Amir Kashani</span>
+            </a>
+            <div class="nav-links">
+                <a href="#expertise">Expertise</a>
+                <a href="#work">Selected work</a>
+                <a href="https://www.linkedin.com/in/amirabbaskashani" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a class="button button-quiet nav-resume" href="resume.html">Resume <span aria-hidden="true">↗</span></a>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main">
+        <section class="hero wrap" aria-labelledby="intro-title">
+            <div>
+                <p class="eyebrow">Mobile engineering · Connected systems</p>
+                <h1 id="intro-title">Software from the device up.</h1>
+                <p class="lede">I’m Amir, a <strong>senior mobile engineer and systems architect</strong>. My core is iOS and Android, followed by shared C++ systems. I’ve also built backend services and worked with big data, machine learning, and practical AI tooling.</p>
+                <div class="hero-actions">
+                    <a class="button button-primary" href="resume.html">Read my resume <span aria-hidden="true">↗</span></a>
+                    <a class="button button-quiet" href="mailto:kashaniamirabbas@gmail.com">Start a conversation</a>
+                </div>
+            </div>
+            <aside class="profile-card" aria-label="Profile">
+                <img class="portrait" src="avatar.png" alt="Portrait of Amir Kashani" width="480" height="480">
+                <div class="profile-meta">
+                    <strong>Amir Kashani</strong>
+                    <span>Munich, Germany</span>
+                    <div class="availability"><span class="dot" aria-hidden="true"></span>Mobile · C++ · Systems · AI</div>
+                </div>
+            </aside>
+        </section>
+
+        <section class="proof" aria-label="Career highlights">
+            <div class="proof-grid wrap">
+                <div class="proof-item"><strong>10+ yrs</strong><span>building mobile products</span></div>
+                <div class="proof-item"><strong>1M+</strong><span>users served at Filimo</span></div>
+                <div class="proof-item"><strong>9K+</strong><span>peak daily users at BeautyTime</span></div>
+                <div class="proof-item"><strong>110</strong><span>countries featuring Recordium</span></div>
+            </div>
+        </section>
+
+        <section class="section wrap" id="expertise">
+            <div class="section-heading">
+                <div class="section-kicker">01 · Expertise</div>
+                <div>
+                    <h2>Mobile first, with depth below and beyond the app.</h2>
+                    <p>I work across product experience, platform architecture, low-level connectivity, and the services and data workflows that support them.</p>
+                </div>
+            </div>
+            <div class="expertise-grid">
+                <article class="card">
+                    <span class="card-number">PRIMARY</span>
+                    <h3>Mobile engineering</h3>
+                    <p>Architecture and delivery across iOS and Android, from modular feature systems to media playback, offline DRM, and performance work.</p>
+                    <div class="chips"><span class="chip">Swift</span><span class="chip">Objective-C</span><span class="chip">iOS</span><span class="chip">Android</span><span class="chip">AVFoundation</span></div>
+                </article>
+                <article class="card">
+                    <span class="card-number">SYSTEMS</span>
+                    <h3>C++ &amp; connectivity</h3>
+                    <p>Shared C++ components and secure device-to-vehicle communication across BLE, NFC, UWB, Apple CarKey, and CCC Digital Key.</p>
+                    <div class="chips"><span class="chip">C++</span><span class="chip">BLE</span><span class="chip">NFC</span><span class="chip">UWB</span><span class="chip">Embedded interfaces</span></div>
+                </article>
+                <article class="card">
+                    <span class="card-number">ADJACENT</span>
+                    <h3>Backend, data &amp; AI</h3>
+                    <p>Backend and API design for product delivery, academic work in big data and machine learning, and hands-on AI pipelines for media and engineering workflows.</p>
+                    <div class="chips"><span class="chip">Python</span><span class="chip">REST / GraphQL</span><span class="chip">Big Data</span><span class="chip">ML</span><span class="chip">LLM tooling</span></div>
+                </article>
+            </div>
+        </section>
+
+        <section class="section wrap" id="work">
+            <div class="section-heading">
+                <div class="section-kicker">02 · Selected work</div>
+                <div><h2>Products built at scale, from media to mobility.</h2></div>
+            </div>
+            <div class="work-list">
+                <article class="work-item">
+                    <time class="work-date">2022 — PRESENT</time>
+                    <div><h3>Connected mobility · Quartett Mobile</h3><p>Building Apple CarKey and CCC 3.0 Digital Key integrations, including a shared C++ BLE core used across iOS and Android.</p></div>
+                    <span class="work-tag">Mobile + C++</span>
+                </article>
+                <article class="work-item">
+                    <time class="work-date">2020 — 2022</time>
+                    <div><h3>Mobile engineering lead · Filimo</h3><p>Led a modular mobile architecture rewrite for a VOD platform with more than one million users, improving playback startup, delivery quality, and team velocity.</p></div>
+                    <span class="work-tag">Streaming</span>
+                </article>
+                <article class="work-item">
+                    <time class="work-date">2017 — 2020</time>
+                    <div><h3>Co-founder &amp; CTO · BeautyTime</h3><p>Shipped web, iOS, and Android products in four months, built the supporting systems, and scaled the marketplace to 9,000+ peak daily active users.</p></div>
+                    <span class="work-tag">0 → 1</span>
+                </article>
+                <article class="work-item">
+                    <time class="work-date">2013</time>
+                    <div><h3>Independent iOS app · Recordium</h3><p>Built and shipped an audio recording app featured by Apple in 110 countries and ranked among the top 10 Business apps worldwide.</p></div>
+                    <span class="work-tag">iOS</span>
+                </article>
+            </div>
+        </section>
+
+        <section class="section wrap" id="ai">
+            <div class="section-heading">
+                <div class="section-kicker">03 · Data &amp; AI</div>
+                <div>
+                    <h2>From big-data research to useful AI systems.</h2>
+                    <p>My M.Sc. research examined the business value of big-data analysis. Recent independent work includes multimodal video classification, crash triage, transcription and diarization, and codebase knowledge graphs.</p>
+                </div>
+            </div>
+            <div class="cta-panel">
+                <div><h2>Want the full career history?</h2><p>Experience, projects, technical scope, education, and recognition are in the complete resume.</p></div>
+                <a class="button button-primary" href="resume.html">Open resume <span aria-hidden="true">↗</span></a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-row wrap">
+            <span>© 2026 Amir Kashani · Munich</span>
+            <div class="footer-links">
+                <a href="mailto:kashaniamirabbas@gmail.com">Email</a>
+                <a href="https://github.com/aakpro" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://www.linkedin.com/in/amirabbaskashani" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </div>
         </div>
-    </div>
+    </footer>
 </body>
 </html>
