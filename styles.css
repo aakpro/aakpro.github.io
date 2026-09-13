@@ -79,7 +79,7 @@ img { max-width: 100%; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 2rem; }
 .profile-card { position: relative; padding: 1.25rem; overflow: hidden; border: 1px solid var(--line); border-radius: 28px; background: linear-gradient(155deg, rgba(21, 43, 66, .92), rgba(9, 20, 35, .88)); box-shadow: var(--shadow); }
 .profile-card::after { position: absolute; right: -3rem; bottom: -4rem; width: 11rem; height: 11rem; content: ""; border-radius: 50%; background: rgba(102, 230, 195, .11); filter: blur(2px); }
-.portrait { width: 100%; aspect-ratio: 1 / 1.05; object-fit: cover; border-radius: 20px; filter: saturate(.82) contrast(1.04); }
+.portrait { display: block; width: 100%; height: auto; aspect-ratio: 1 / 1.05; object-fit: cover; border-radius: 20px; filter: saturate(.82) contrast(1.04); }
 .profile-meta { position: relative; z-index: 1; padding: 1.1rem .25rem .25rem; }
 .profile-meta strong { display: block; font-size: 1.1rem; }
 .profile-meta span { color: var(--muted); font-size: .9rem; }
@@ -172,8 +172,8 @@ img { max-width: 100%; }
     .nav { min-height: 64px; }
     .nav-links a:not(.nav-resume) { display: none; }
     .hero { min-height: auto; grid-template-columns: 1fr; gap: 2.25rem; padding-block: 3.5rem; }
-    .profile-card { display: grid; grid-template-columns: 112px 1fr; gap: 1rem; align-items: center; }
-    .portrait { aspect-ratio: 1; }
+    .profile-card { display: grid; grid-template-columns: 112px minmax(0, 1fr); gap: 1rem; align-items: center; }
+    .portrait { width: 112px; height: 112px; aspect-ratio: auto; align-self: center; }
     .profile-meta { padding: 0; }
     .proof-grid { grid-template-columns: repeat(2, 1fr); }
     .proof-item:nth-child(2) { border-right: 0; }
@@ -193,7 +193,8 @@ img { max-width: 100%; }
     .brand > span:last-child { display: none; }
     .hero h1 { font-size: clamp(3.2rem, 18vw, 5rem); }
     .hero-actions .button { width: 100%; }
-    .profile-card { grid-template-columns: 88px 1fr; border-radius: 20px; }
+    .profile-card { grid-template-columns: 88px minmax(0, 1fr); border-radius: 20px; }
+    .portrait { width: 88px; height: 88px; }
     .proof-item { padding: 1.05rem; }
     .proof-item strong { font-size: 1.4rem; }
     .section { padding-block: 3.5rem; }
