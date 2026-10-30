@@ -216,16 +216,191 @@ img { max-width: 100%; }
     .button { transition: none; }
 }
 
+@page {
+    size: A4;
+    margin: 8mm 10mm;
+}
+
 @media print {
-    :root { color-scheme: light; --ink: #12202d; --muted: #485766; --faint: #657483; --accent: #0f766e; --blue: #315f9c; --line: #d8e0e7; }
-    body, .resume-body { color: var(--ink); background: #fff; font-size: 10.5pt; }
-    body::before, .site-header, .resume-actions { display: none; }
-    .resume-shell { width: 100%; margin: 0; border: 0; border-radius: 0; box-shadow: none; background: #fff; }
-    .resume-top { padding: 24pt 30pt; background: #eff6f7; print-color-adjust: exact; }
-    .resume-content { grid-template-columns: 165pt 1fr; gap: 22pt; padding: 24pt 30pt; }
-    .summary, .experience li, .skill-group p, .project p { color: var(--muted); }
-    .experience::before { border-color: #fff; }
-    .project { break-inside: avoid; background: #fff; }
-    .experience, .resume-section, .education-item, .award-item { break-inside: avoid; }
+    :root {
+        color-scheme: light;
+        --ink: #0f1923;
+        --muted: #334155;
+        --faint: #64748b;
+        --accent: #0d6b63;
+        --blue: #1d4ed8;
+        --line: #cbd5e1;
+    }
+    html, body, .resume-body {
+        color: var(--ink);
+        background: #fff !important;
+        font-size: 8.5pt;
+        line-height: 1.35;
+        margin: 0;
+        padding: 0;
+    }
+    body::before, .site-header, .resume-actions, .resume-top::after, .skip-link {
+        display: none !important;
+    }
+    .resume-shell {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        border: 0 !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        background: #fff !important;
+    }
+    .resume-top {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 0 0 8pt 0 !important;
+        margin-bottom: 8pt !important;
+        border-bottom: 1.5pt solid var(--line) !important;
+        background: none !important;
+    }
+    .resume-top-content { flex: 1; }
+    .resume-top h1 {
+        font-size: 18pt !important;
+        margin: 0 0 2pt 0 !important;
+        line-height: 1.1;
+        color: #09131d;
+    }
+    .resume-title {
+        font-size: 9pt !important;
+        font-weight: 700;
+        color: var(--accent) !important;
+        margin-bottom: 2pt;
+    }
+    .eyebrow { display: none; }
+    .contact-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2pt 8pt;
+        margin-top: 2pt !important;
+        font-size: 7.8pt;
+        color: var(--muted);
+    }
+    .resume-photo {
+        width: 58px !important;
+        height: 58px !important;
+        border-radius: 12px !important;
+        margin-left: 12pt;
+    }
+    .resume-content {
+        display: grid !important;
+        grid-template-columns: 145pt minmax(0, 1fr) !important;
+        gap: 14pt !important;
+        padding: 0 !important;
+    }
+    .resume-aside {
+        align-self: start;
+    }
+    .resume-main {
+        min-width: 0;
+    }
+    .resume-section {
+        margin-bottom: 8pt !important;
+    }
+    .resume-section h2 {
+        font-size: 7.8pt !important;
+        letter-spacing: .1em;
+        margin: 0 0 4pt 0 !important;
+        color: var(--accent);
+    }
+    .summary {
+        font-size: 8pt !important;
+        line-height: 1.35;
+        color: var(--muted) !important;
+        margin: 0;
+    }
+    .skill-group {
+        margin-bottom: 5pt !important;
+    }
+    .skill-group h3 {
+        font-size: 7.6pt !important;
+        margin: 0 0 1pt 0 !important;
+        font-weight: 700;
+    }
+    .skill-group p {
+        font-size: 7pt !important;
+        line-height: 1.25;
+        color: var(--muted) !important;
+        margin: 0;
+    }
+    .education-item, .award-item {
+        margin-bottom: 4pt !important;
+    }
+    .education-item strong, .award-item strong {
+        font-size: 7.6pt !important;
+    }
+    .education-item span, .award-item span {
+        font-size: 7pt !important;
+        line-height: 1.2;
+    }
+    .experience {
+        padding-left: 8pt !important;
+        margin-bottom: 7pt !important;
+        border-left: 1.5pt solid var(--line) !important;
+        break-inside: avoid !important;
+    }
+    .experience::before {
+        left: -3.5pt !important;
+        top: 2.5pt !important;
+        width: 4pt !important;
+        height: 4pt !important;
+        border-color: #fff !important;
+    }
+    .experience-head {
+        display: flex;
+        justify-content: space-between;
+        gap: 4pt;
+        align-items: baseline;
+    }
+    .experience h3 {
+        font-size: 8.5pt !important;
+        margin: 0;
+    }
+    .company { color: var(--blue) !important; }
+    .date {
+        font-size: 7pt !important;
+    }
+    .role-meta {
+        font-size: 7.2pt !important;
+        margin: 1pt 0 2pt 0 !important;
+    }
+    .experience li {
+        margin: 1.5pt 0 !important;
+        padding-left: 7pt !important;
+        font-size: 7.6pt !important;
+        line-height: 1.28;
+        color: var(--muted) !important;
+    }
+    .experience li strong {
+        color: #0f1923 !important;
+    }
+    .project-list {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 4pt !important;
+    }
+    .project {
+        padding: 3.5pt 5pt !important;
+        border-radius: 6pt !important;
+        border: 1pt solid var(--line) !important;
+        background: #fafbfc !important;
+        break-inside: avoid;
+    }
+    .project h3 {
+        font-size: 7.6pt !important;
+        margin: 0 0 1pt 0 !important;
+    }
+    .project p {
+        font-size: 6.8pt !important;
+        line-height: 1.2;
+        color: var(--muted) !important;
+        margin: 0;
+    }
     a { text-decoration: none; }
 }
