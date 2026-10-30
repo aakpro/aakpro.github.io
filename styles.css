@@ -114,9 +114,17 @@ img { max-width: 100%; }
 .work-item p { max-width: 720px; margin: 0; color: var(--muted); font-size: .92rem; }
 .work-tag { align-self: start; padding: .35rem .6rem; border-radius: 999px; color: var(--blue); background: rgba(131,170,255,.09); font-size: .75rem; white-space: nowrap; }
 
+.tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin-bottom: 2.5rem; }
+.tool-card { padding: 1.35rem 1.45rem; border: 1px solid var(--line); border-radius: 18px; background: var(--surface); transition: transform .2s ease, border-color .2s ease; }
+.tool-card:hover { transform: translateY(-2px); border-color: var(--line-strong); }
+.tool-tag { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .75rem; color: var(--accent); }
+.tool-card h3 { margin: .55rem 0 .35rem; font-size: 1.05rem; }
+.tool-card p { margin: 0; color: var(--muted); font-size: .88rem; line-height: 1.55; }
+
 .cta-panel { display: flex; justify-content: space-between; gap: 2rem; align-items: center; padding: clamp(1.5rem, 4vw, 3rem); border: 1px solid var(--line-strong); border-radius: 28px; background: linear-gradient(140deg, rgba(25, 63, 67, .8), rgba(17, 31, 56, .85)); }
 .cta-panel h2 { margin: 0 0 .4rem; font-size: clamp(1.55rem, 3vw, 2.4rem); letter-spacing: -.04em; }
 .cta-panel p { margin: 0; color: var(--muted); }
+.cta-actions { display: flex; flex-wrap: wrap; gap: .75rem; align-items: center; }
 
 .site-footer { padding-block: 2.2rem; border-top: 1px solid var(--line); color: var(--faint); font-size: .82rem; }
 .footer-row { display: flex; justify-content: space-between; gap: 1rem; }
