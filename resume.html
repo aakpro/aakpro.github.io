@@ -40,188 +40,147 @@
                     <a href="https://www.linkedin.com/in/amirabbaskashani" target="_blank" rel="noopener noreferrer">linkedin.com/in/amirabbaskashani</a>
                 </div>
             </div>
-            <img class="resume-photo" src="avatar.png" alt="Portrait of Amir Kashani" width="252" height="252">
         </header>
 
         <div class="resume-content">
-            <aside class="resume-aside" aria-label="Skills and education">
-                <section class="resume-section">
-                    <h2>Core stack</h2>
-                    <div class="skill-group">
-                        <h3>Automotive &amp; Hardware Security</h3>
-                        <p>CCC Digital Key 3.0 · Apple CarKeyKit · CarKeySession · PassKit · Secure Element (SE) · UWB Distance Ranging · BLE Proximity &amp; GATT · NFC APDU · ECU/OEM Gateway integration · cryptographic key sharing</p>
-                    </div>
-                    <div class="skill-group">
-                        <h3>Systems &amp; Languages</h3>
-                        <p>Swift · Modern C++ · Objective-C · Kotlin / JNI Interop · Python · SwiftUI · UIKit · Combine · Async/Await · GCD · Clean Architecture · Domain-Driven Design (DDD) · Modular Frameworks · IPC</p>
-                    </div>
-                    <div class="skill-group">
-                        <h3>Media &amp; Infrastructure</h3>
-                        <p>Distributed VOD Architecture · AVPlayer ABR Streaming · Multi-CDN Edge Failover · Offline DRM &amp; Encrypted Caching · SQLite · Core Data · CI/CD Automation · Release Regression Testing</p>
-                    </div>
-                    <div class="skill-group">
-                        <h3>AI &amp; Developer Velocity</h3>
-                        <p>Multimodal Video Pipelines (Qwen) · Automated LLM Crash Triage · AST Codebase Knowledge Graphs · Whisper &amp; pyannote Diarization · Local Motion Detection (MacSpyCam)</p>
-                    </div>
-                </section>
+            <section class="resume-section" id="profile">
+                <h2>Profile</h2>
+                <p class="summary">Senior Systems &amp; Connectivity Architect with 10+ years architecting iOS, Android, and shared C++ systems, specializing in CCC Digital Key 3.0, Apple CarKeyKit, UWB, BLE, NFC, and Secure Element (SE) hardware attestation. Proven track record leading mobile platform architecture for 1M+ users and 400K+ subscribers (+30% retention and load performance), reducing video startup from 4–5s to under 1 second, and delivering multi-platform products from 0-to-1. Creator of Recordium, featured globally by Apple in 110 countries and ranked Top 10 Business App worldwide.</p>
+            </section>
 
-                <section class="resume-section">
-                    <h2>Education</h2>
-                    <div class="education-item">
-                        <strong>M.Sc. Information Technology (E-Commerce)</strong>
-                        <span>Iran University of Science and Technology · 2015–2018</span>
-                        <span>Thesis: Assessing the business value of big-data analysis in firms</span>
+            <section class="resume-section" id="core-stack">
+                <h2>Core stack</h2>
+                <div class="skill-row">
+                    <strong>Automotive &amp; Hardware Security:</strong>
+                    <span>CCC Digital Key 3.0 · Apple CarKeyKit · CarKeySession · PassKit · Secure Element (SE) · UWB Distance Ranging · BLE Proximity &amp; GATT · NFC APDU · ECU/OEM Gateway integration · Cryptographic key sharing</span>
+                </div>
+                <div class="skill-row">
+                    <strong>Systems Architecture &amp; Languages:</strong>
+                    <span>Swift · Modern C++ · Objective-C · Kotlin / JNI Interop · Python · SwiftUI · UIKit · Combine · Async/Await · GCD · Clean Architecture · Domain-Driven Design (DDD) · Modular Frameworks · IPC</span>
+                </div>
+                <div class="skill-row">
+                    <strong>Media &amp; Infrastructure:</strong>
+                    <span>Distributed VOD Architecture · AVPlayer ABR Streaming · Multi-CDN Edge Failover · Offline DRM &amp; Encrypted Caching · SQLite · Core Data · CI/CD Automation · Release Regression Testing</span>
+                </div>
+                <div class="skill-row">
+                    <strong>AI &amp; Developer Velocity:</strong>
+                    <span>Multimodal Video Pipelines (Qwen) · Automated LLM Crash Triage · AST Codebase Knowledge Graphs · Whisper &amp; pyannote Diarization · Local Motion Detection (MacSpyCam)</span>
+                </div>
+            </section>
+
+            <section class="resume-section" id="experience">
+                <h2>Experience</h2>
+
+                <article class="experience">
+                    <div class="experience-head">
+                        <h3>Senior Connected Mobility Systems Engineer · <span class="company">Quartett Mobile</span></h3>
+                        <time class="date">MAR 2022 — PRESENT</time>
                     </div>
-                    <div class="education-item">
-                        <strong>B.Sc. Software Engineering</strong>
-                        <span>Shahid Beheshti University · 2008–2013</span>
+                    <p class="role-meta">Connected Vehicle &amp; German Automotive OEM Programs · Munich, Germany</p>
+                    <ul>
+                        <li>Architected and delivered end-to-end digital vehicle access provisioning workflows utilizing <strong>Apple CarKeyKit</strong>, <strong>CarKeySession</strong>, and <strong>PassKit</strong>, managing cryptographic owner pairing, Apple Wallet key provisioning, and vehicle credential synchronization.</li>
+                        <li>Implemented <strong>CCC Digital Key 3.0</strong> cryptographic security workflows, orchestrating <strong>Secure Element (SE)</strong> applet attestation, certificate exchange, and <strong>NFC APDU</strong> contact transactions (tap-to-unlock and engine start) to enforce zero-trust access control against relay attacks.</li>
+                        <li>Integrated multi-transport passive entry and vehicle localization across <strong>BLE</strong> proximity detection and <strong>UWB</strong> distance ranging in close collaboration with vehicle <strong>ECU/OEM Gateway</strong>, embedded firmware, and cloud engineering teams.</li>
+                        <li>Decoupled and co-developed a cross-platform <strong>Shared C++ Core</strong> state machine for <strong>BLE</strong> transport and cryptographic protocol orchestration, eliminating cross-platform protocol divergence and duplicate maintenance overhead across iOS and Android codebases.</li>
+                        <li>Standardized cross-organizational API contracts and automated mock-based contract testing across distributed mobile, embedded firmware, and vehicle <strong>ECU/OEM Gateway</strong> teams, establishing strict regression quality gates for multi-tier automotive deliveries.</li>
+                    </ul>
+                </article>
+
+                <article class="experience">
+                    <div class="experience-head">
+                        <h3>Lead Mobile Systems Architect · <span class="company">SabaIdea Group</span></h3>
+                        <time class="date">MAR 2020 — MAR 2022</time>
                     </div>
-                </section>
+                    <p class="role-meta">Filimo · Televika · Zabia · High-Scale Video Streaming Platforms</p>
+                    <ul>
+                        <li>Spearheaded platform-wide architecture modernization to modular <strong>Clean Architecture</strong> and Domain-Driven Design (DDD) for high-concurrency VOD streaming applications (Filimo, Televika, Zabia), scaling throughput to <strong>1M+ active users</strong> and <strong>400K+ subscribers</strong> while boosting retention and load performance by <strong>+30%</strong>.</li>
+                        <li>Optimized playback pipeline performance, cutting video startup latency from <strong>4–5 seconds to under 1 second</strong> through custom <strong>AVPlayer ABR</strong> (Adaptive Bitrate) streaming heuristics, dynamic multi-CDN failover, and proactive buffer pre-warming.</li>
+                        <li>Architected secure <strong>Offline DRM</strong> playback and encrypted media caching subsystems with hardware-backed key persistence and SQLite storage, enabling compliant offline viewing across premium licensed catalogs.</li>
+                        <li>Engineered automated release quality gates, mock network injection suites, and end-to-end regression pipelines, shrinking release regression cycles by <strong>40%</strong> while accelerating deployment velocity.</li>
+                        <li>Coached and guided cross-functional mobile engineering squads across multiple streaming products, establishing strict API contract governance, watch-history synchronization protocols, and cross-team interface boundaries with backend and data platforms.</li>
+                    </ul>
+                </article>
 
-                <section class="resume-section">
-                    <h2>Languages</h2>
-                    <div class="education-item"><strong>English</strong><span>Professional working proficiency</span></div>
-                    <div class="education-item"><strong>Persian</strong><span>Native</span></div>
-                </section>
-
-                <section class="resume-section">
-                    <h2>Recognition</h2>
-                    <div class="award-item">
-                        <strong>Apple App Store Global Feature</strong>
-                        <span>Recordium · featured across 110 countries · Top 10 Business apps worldwide · Coverage in The Guardian, The Telegraph, The Next Web</span>
+                <article class="experience">
+                    <div class="experience-head">
+                        <h3>Co-Founder &amp; CTO · <span class="company">BeautyTime</span></h3>
+                        <time class="date">NOV 2017 — MAR 2020</time>
                     </div>
-                    <div class="award-item">
-                        <strong>Harkat National Festival</strong>
-                        <span>Selected Scientific Association Award · 2011</span>
+                    <p class="role-meta">Marketplace &amp; B2B SaaS · Multi-platform product and backend infrastructure</p>
+                    <ul>
+                        <li>Architected and delivered the complete 0-to-1 omnichannel platform across <strong>3 platforms (Web, iOS, and Android) in 4 months</strong> from inception to initial commercial launch.</li>
+                        <li>Engineered scalable backend microservices, REST APIs, and database architecture to support <strong>9,000+ peak daily active users (DAU)</strong> with continuous operational availability.</li>
+                        <li>Engineered real-time B2B SaaS scheduling and B2C geo-discovery marketplace workflows with dynamic booking services, reducing booking abandonment and improving salon operational efficiency.</li>
+                        <li>Directed a <strong>6-person cross-functional team</strong> spanning engineering, product, marketing, and operations under tight capital constraints, establishing agile sprint cadences and delivery standards.</li>
+                    </ul>
+                </article>
+
+                <article class="experience">
+                    <div class="experience-head">
+                        <h3>Senior iOS Engineer · <span class="company">Sheypoor</span></h3>
+                        <time class="date">AUG 2015 — OCT 2017</time>
                     </div>
-                </section>
-            </aside>
+                    <p class="role-meta">Large classifieds marketplace (350+ employees) · iOS and platform APIs</p>
+                    <ul>
+                        <li>Architected and shipped Sheypoor iOS v2 in <strong>3 months</strong> ahead of an institutional venture funding round for an organization of <strong>350+ employees</strong>.</li>
+                        <li>Partnered with Android, web, and backend teams on v3 REST API contract specifications and client caching layers, driving a <strong>+20% platform engagement</strong> increase.</li>
+                        <li>Earned rapid promotion to Senior Engineer within <strong>12 months</strong> based on architectural contributions, technical leadership, and cross-functional delivery.</li>
+                    </ul>
+                </article>
 
-            <div class="resume-main">
-                <section class="resume-section">
-                    <h2>Profile</h2>
-                    <p class="summary">Senior Systems &amp; Connectivity Architect with 10+ years architecting iOS, Android, and shared C++ systems, specializing in CCC Digital Key 3.0, Apple CarKeyKit, UWB, BLE, NFC, and Secure Element (SE) hardware attestation. Proven track record leading mobile platform architecture for 1M+ users and ~400K subscribers (+30% retention and load performance), reducing video startup from 4–5s to ~1s, and delivering multi-platform products from 0-to-1. Creator of Recordium, featured globally by Apple in 110 countries and ranked Top 10 Business App worldwide.</p>
-                </section>
+                <article class="experience">
+                    <div class="experience-head">
+                        <h3>Mobile Software Engineer · <span class="company">ivysoft</span></h3>
+                        <time class="date">JUN 2013 — JAN 2015</time>
+                    </div>
+                    <p class="role-meta">Commercial iOS products across finance, payments, and media</p>
+                    <ul>
+                        <li>Optimized application cold-launch performance and memory utilization across flagship commercial iOS products (Rahavard365, Digipay, MusicMa) using Instruments profiling and view hierarchy optimization.</li>
+                        <li>Engineered telemetry-driven conversion funnels and user analytics, facilitating data-backed transitions from paid downloads to freemium monetization models across production apps.</li>
+                    </ul>
+                </article>
+            </section>
 
-                <section class="resume-section" id="experience">
-                    <h2>Experience</h2>
+            <section class="resume-section" id="projects-recognition">
+                <h2>Selected Engineering Projects &amp; Recognition</h2>
+                <div class="highlight-project">
+                    <div class="experience-head">
+                        <h3>Recordium — iOS Audio Engine</h3>
+                        <span class="date">Global Apple Recognition</span>
+                    </div>
+                    <p>Architected and shipped Recordium, an independent iOS audio recording engine featuring real-time waveform visualization and in-audio annotations. <strong>Featured by Apple on the App Store home page across 110 countries</strong>, ranked among the <strong>Top 10 Business Apps worldwide</strong>, and covered in <em>The Guardian</em>, <em>The Telegraph</em>, and <em>The Next Web</em>.</p>
+                </div>
+                <ul class="project-bullets">
+                    <li><strong>Multimodal Video Classification:</strong> Engineered a Qwen vision-language pipeline for automated keyframe extraction, scene semantics, and taxonomy tagging, cutting manual video labeling effort by over 80%.</li>
+                    <li><strong>AI Crash Triage Pipeline:</strong> Developed an LLM crash triage pipeline mapping stack traces to deterministic AST codebase knowledge graphs and git blame history, cutting incident triage turnaround from 30 minutes to under 5 minutes.</li>
+                    <li><strong>Transcription &amp; Diarization:</strong> Implemented Whisper and pyannote workflows delivering structured, speaker-labeled JSON outputs for multi-speaker media.</li>
+                    <li><strong>Codebase Knowledge Graphs:</strong> Built deterministic AST parsing and dependency graphs for navigating and refactoring unfamiliar enterprise repositories.</li>
+                    <li><strong>MacSpyCam:</strong> Authored a privacy-focused macOS edge security utility with local motion detection and zero cloud telemetry.</li>
+                </ul>
+            </section>
 
-                    <article class="experience">
-                        <div class="experience-head">
-                            <h3>Senior Connected Mobility Systems Engineer · <span class="company">Quartett Mobile</span></h3>
-                            <time class="date">MAR 2022 — PRESENT</time>
-                        </div>
-                        <p class="role-meta">Quartett Mobile (Connected Vehicle &amp; German Automotive OEM Programs) | Munich, Germany</p>
-                        <ul>
-                            <li>Architected and delivered end-to-end digital vehicle access provisioning workflows utilizing <strong>Apple CarKeyKit</strong>, <strong>CarKeySession</strong>, and <strong>PassKit</strong>, managing cryptographic owner pairing, Apple Wallet key provisioning, and vehicle credential synchronization.</li>
-                            <li>Implemented <strong>CCC Digital Key 3.0</strong> protocols across <strong>Secure Element (SE)</strong> applet attestation, <strong>NFC APDU</strong> contact transactions, and <strong>BLE</strong> pairing handshakes to enforce zero-trust access control against vehicular relay attacks across <strong>ECU/OEM Gateway</strong> endpoints.</li>
-                            <li>Integrated multi-transport CCC 3.0 vehicle access across <strong>NFC</strong> (tap-to-unlock and engine start), <strong>BLE</strong> proximity detection, <strong>UWB</strong> distance ranging, and <strong>Secure Element (SE)</strong> certificate exchange in close collaboration with vehicle ECU, firmware, and cloud engineering teams.</li>
-                            <li>Decoupled and co-developed a cross-platform <strong>Shared C++ Core</strong> state machine for <strong>BLE</strong> transport and cryptographic protocol orchestration, eliminating cross-platform protocol divergence and duplicate maintenance overhead across iOS and Android codebases.</li>
-                            <li>Standardized cross-organizational API contracts and automated mock-based contract testing across distributed mobile, embedded firmware, and vehicle <strong>ECU/OEM Gateway</strong> teams, establishing strict regression quality gates for multi-tier automotive deliveries.</li>
+            <section class="resume-section" id="education-academic-languages">
+                <h2>Education, Academic Work &amp; Languages</h2>
+                <div class="meta-section">
+                    <div class="meta-subgroup">
+                        <h3>Education</h3>
+                        <p><strong>M.Sc. in Information Technology (E-Commerce)</strong> — Iran University of Science and Technology (2015–2018)<br><span class="meta-detail">Thesis: Assessing the business value of big-data analysis in firms</span></p>
+                        <p><strong>B.Sc. in Software Engineering</strong> — Shahid Beheshti University (2008–2013)</p>
+                    </div>
+                    <div class="meta-subgroup">
+                        <h3>Academic &amp; Community Work</h3>
+                        <ul class="meta-list">
+                            <li><strong>E-Commerce Laboratory (IUST):</strong> Research, seminars, and presentations on big data analytics, text mining, and social-network analysis.</li>
+                            <li><strong>SM-Art Robotic Group:</strong> Autonomous control algorithms for RoboCup Small Size League.</li>
+                            <li><strong>Chanteh Group:</strong> Designed and taught a native Swift software-development curriculum.</li>
                         </ul>
-                    </article>
-
-                    <article class="experience">
-                        <div class="experience-head">
-                            <h3>Lead Mobile Systems Architect · <span class="company">SabaIdea Group</span></h3>
-                            <time class="date">MAR 2020 — MAR 2022</time>
-                        </div>
-                        <p class="role-meta">Filimo · Televika · Zabia · High-Scale Video Streaming Platforms</p>
-                        <ul>
-                            <li>Spearheaded platform-wide architecture modernization to modular <strong>Clean Architecture</strong> and Domain-Driven Design (DDD) for high-concurrency VOD streaming applications (Filimo, Televika, Zabia), scaling throughput to <strong>1M+ active users</strong> and <strong>~400K subscribers</strong> while boosting retention and load performance by <strong>+30%</strong>.</li>
-                            <li>Optimized playback pipeline performance, cutting video startup latency from <strong>4–5 seconds to ~1 second</strong> through custom <strong>AVPlayer ABR</strong> (Adaptive Bitrate) streaming heuristics, dynamic multi-CDN failover, and proactive buffer pre-warming.</li>
-                            <li>Architected secure <strong>Offline DRM</strong> playback and encrypted media caching subsystems with hardware-backed key persistence and SQLite storage, enabling compliant offline viewing across premium licensed catalogs.</li>
-                            <li>Engineered automated release quality gates, mock network injection suites, and end-to-end regression pipelines, shrinking release regression cycles by <strong>40%</strong> while accelerating deployment velocity.</li>
-                            <li>Coached and guided cross-functional mobile engineering squads across multiple streaming products, establishing strict API contract governance, watch-history synchronization protocols, and cross-team interface boundaries with backend and data platforms.</li>
-                        </ul>
-                    </article>
-
-                    <article class="experience">
-                        <div class="experience-head">
-                            <h3>Co-Founder &amp; CTO · <span class="company">BeautyTime</span></h3>
-                            <time class="date">NOV 2017 — MAR 2020</time>
-                        </div>
-                        <p class="role-meta">Marketplace &amp; B2B SaaS · Multi-platform product and backend infrastructure</p>
-                        <ul>
-                            <li>Architected and delivered the complete 0-to-1 omnichannel platform across <strong>3 platforms (Web, iOS, and Android) in 4 months</strong> from inception to initial commercial launch.</li>
-                            <li>Engineered scalable backend microservices, REST APIs, and database architecture to support <strong>9,000+ peak daily active users (DAU)</strong> with continuous operational availability.</li>
-                            <li>Engineered real-time B2B SaaS scheduling and B2C geo-discovery marketplace workflows with dynamic booking services, reducing booking abandonment and improving salon operational efficiency.</li>
-                            <li>Directed a <strong>6-person cross-functional team</strong> spanning engineering, product, marketing, and operations under tight capital constraints, establishing agile sprint cadences and delivery standards.</li>
-                        </ul>
-                    </article>
-
-                    <article class="experience">
-                        <div class="experience-head">
-                            <h3>Senior iOS Engineer · <span class="company">Sheypoor</span></h3>
-                            <time class="date">AUG 2015 — OCT 2017</time>
-                        </div>
-                        <p class="role-meta">Large classifieds marketplace (350+ employees) · iOS and platform APIs</p>
-                        <ul>
-                            <li>Architected and shipped Sheypoor iOS v2 in <strong>3 months</strong> ahead of an institutional venture funding round for an organization of <strong>350+ employees</strong>.</li>
-                            <li>Partnered with Android, web, and backend teams on v3 REST API contract specifications and client caching layers, driving a <strong>+20% platform engagement</strong> increase.</li>
-                            <li>Earned rapid promotion to Senior Engineer within <strong>12 months</strong> based on architectural contributions, technical leadership, and cross-functional delivery.</li>
-                        </ul>
-                    </article>
-
-                    <article class="experience">
-                        <div class="experience-head">
-                            <h3>Mobile Software Engineer · <span class="company">ivysoft</span></h3>
-                            <time class="date">JUN 2013 — JAN 2015</time>
-                        </div>
-                        <p class="role-meta">Commercial iOS products across finance, payments, and media</p>
-                        <ul>
-                            <li>Optimized application cold-launch performance and memory utilization across flagship commercial iOS products (Rahavard365, Digipay, MusicMa) using Instruments profiling and view hierarchy optimization.</li>
-                            <li>Engineered telemetry-driven conversion funnels and user analytics, facilitating data-backed transitions from paid downloads to freemium monetization models across production apps.</li>
-                        </ul>
-                    </article>
-                </section>
-
-                <section class="resume-section">
-                    <h2>Independent products &amp; AI</h2>
-                    <div class="project-list">
-                        <article class="project">
-                            <h3>Recordium</h3>
-                            <p>Independent iOS audio recording engine featured globally by Apple on the App Store across 110 countries, ranked Top 10 Business App worldwide, and covered in The Guardian, The Telegraph, and The Next Web.</p>
-                        </article>
-                        <article class="project">
-                            <h3>Multimodal Video Classification</h3>
-                            <p>Qwen vision-language pipeline for automated keyframe extraction, scene semantics, and taxonomy tagging, cutting manual video labeling effort by ~80%.</p>
-                        </article>
-                        <article class="project">
-                            <h3>AI Crash Triage Pipeline</h3>
-                            <p>LLM crash triage pipeline mapping stack traces to deterministic AST codebase knowledge graphs and git blame history, cutting incident triage turnaround from ~30 minutes to under 5 minutes.</p>
-                        </article>
-                        <article class="project">
-                            <h3>Transcription &amp; Diarization</h3>
-                            <p>Whisper and pyannote workflows delivering structured, speaker-labeled JSON outputs for multi-speaker media.</p>
-                        </article>
-                        <article class="project">
-                            <h3>Codebase Knowledge Graphs</h3>
-                            <p>Deterministic AST parsing and dependency graphs for navigating and refactoring unfamiliar enterprise repositories.</p>
-                        </article>
-                        <article class="project">
-                            <h3>MacSpyCam</h3>
-                            <p>Privacy-focused macOS edge security utility with local motion detection and zero cloud telemetry.</p>
-                        </article>
                     </div>
-                </section>
-
-                <section class="resume-section">
-                    <h2>Academic &amp; community work</h2>
-                    <div class="education-item">
-                        <strong>E-Commerce Laboratory · IUST</strong>
-                        <span>Research, seminars, and presentations on big data analytics, text mining, and social-network analysis.</span>
+                    <div class="meta-subgroup">
+                        <h3>Languages &amp; Honors</h3>
+                        <p><strong>Languages:</strong> English (Professional working proficiency) · Persian (Native) &nbsp;|&nbsp; <strong>Honors:</strong> Harkat National Festival — Selected Scientific Association Award (2011)</p>
                     </div>
-                    <div class="education-item">
-                        <strong>SM-Art Robotic Group</strong>
-                        <span>Autonomous control algorithms for RoboCup Small Size League.</span>
-                    </div>
-                    <div class="education-item">
-                        <strong>Chanteh Group</strong>
-                        <span>Designed and taught a native Swift software-development curriculum.</span>
-                    </div>
-                </section>
-            </div>
+                </div>
+            </section>
         </div>
     </main>
 </body>
