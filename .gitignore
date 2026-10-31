@@ -26,3 +26,6 @@ build/
 # Logs
 *.log
 npm-debug.log*
+
+# Photo originals (resized, EXIF-stripped copies go in images/)
+images/originals/

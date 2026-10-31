@@ -45,7 +45,7 @@ posthog.init('phc_ruw8LgY5zsSqJSvw2Z5f52E3Tj3aNLbnprX9vLNGYdNo', {
         if (element.closest('section.hero')) return 'hero';
         if (element.closest('footer.site-footer')) return 'footer';
         if (element.closest('#experience')) return 'experience_section';
-        if (element.closest('#projects-recognition') || element.closest('#work') || element.closest('#ai')) return 'projects_section';
+        if (element.closest('#projects-recognition') || element.closest('#work') || element.closest('#lab')) return 'projects_section';
         return 'body';
     }
 
@@ -141,6 +141,17 @@ posthog.init('phc_ruw8LgY5zsSqJSvw2Z5f52E3Tj3aNLbnprX9vLNGYdNo', {
             }
         });
 
+        // 1b. Expertise map (CSS-only radio group on the home page)
+        document.addEventListener('change', function (e) {
+            var input = e.target;
+            if (input && input.name === 'area' && input.type === 'radio') {
+                trackEvent('expertise_area_selected', {
+                    area: input.value,
+                    page_source: pagePath
+                });
+            }
+        });
+
         // 2. Browser Print Event (e.g. Cmd+P or File > Print)
         window.addEventListener('beforeprint', function () {
             trackEvent('resume_print_triggered', {
@@ -191,7 +202,7 @@ posthog.init('phc_ruw8LgY5zsSqJSvw2Z5f52E3Tj3aNLbnprX9vLNGYdNo', {
         // 5. Technical Section Viewport Focus (IntersectionObserver)
         if ('IntersectionObserver' in window) {
             var trackedElements = document.querySelectorAll(
-                '#profile, #core-stack, #experience, #experience article, #projects-recognition, #education-academic-languages, #expertise, #work, #ai'
+                '#profile, #core-stack, #experience, #experience article, #projects-recognition, #education-academic-languages, #expertise, #work, #lab, #life-cards'
             );
 
             var viewedSections = new Set();
