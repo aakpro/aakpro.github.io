@@ -243,6 +243,10 @@ img { max-width: 100%; }
     html, body, .resume-body {
         color: var(--ink);
         background: #fff !important;
+        /* Chrome can only embed the variable macOS system font as Type3 glyphs, which split
+           words in the PDF text layer. Ligatures off, or "buffer" extracts as "buﬀer". */
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-variant-ligatures: none;
         font-size: 8.4pt;
         line-height: 1.34;
         margin: 0;
@@ -301,7 +305,7 @@ img { max-width: 100%; }
     }
     .resume-section h2 {
         font-size: 8pt !important;
-        letter-spacing: .1em;
+        letter-spacing: .04em; /* wider spacing extracts as "P R O F I L E" */
         margin: 0 0 4pt 0 !important;
         color: var(--accent);
         border-bottom: 1pt solid var(--line);
