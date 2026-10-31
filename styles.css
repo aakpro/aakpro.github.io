@@ -272,6 +272,7 @@ img { max-width: 100%; }
         font-size: 17pt !important;
         margin: 0 0 2pt 0 !important;
         line-height: 1.1;
+        letter-spacing: -.01em;
         color: #09131d;
     }
     .resume-title {
@@ -448,6 +449,18 @@ img { max-width: 100%; }
     }
     .meta-list li strong {
         color: #0f1923 !important;
+    }
+    /* Chrome writes the PDF text layer in paint order, and positioned boxes paint after
+       static ones. Positioning every box keeps the text in DOM order for ATS parsers. */
+    .resume-shell :is(header, div, section, article, h1, h2, h3, p, ul, li, time) { position: relative; }
+    .resume-top-content { z-index: auto !important; }
+    .experience li::before,
+    .project-bullets li::before,
+    .meta-list li::before {
+        position: static;
+        display: inline-block;
+        width: 7pt;
+        margin-left: -7pt;
     }
     a { text-decoration: none; }
 }
