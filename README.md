@@ -13,7 +13,7 @@ This repository hosts the personal portfolio and resume of **Amir Kashani**, acc
 - **Connected devices & digital keys:** Apple CarKey keyless entry in myAudi, Apple Wallet car keys, Bluetooth LE, shared C++ core, at Quartett mobile (CARIAD, Volkswagen Group).
 - **Media & performance:** an in-house AVPlayer-based player and offline DRM downloads for Filimo's streaming apps (1M+ iOS users).
 - **Agentic engineering:** coding agents, spec-driven development, local-model pipelines.
-- **Leadership & product:** iOS chapter lead (5–8 engineers) and startup CTO.
+- **Product & leadership:** co-founder, CPO and CMO of a startup taken from idea to 9,000+ daily users; iOS chapter lead (5–8 engineers).
 
 ---
 

@@ -202,7 +202,7 @@ posthog.init('phc_ruw8LgY5zsSqJSvw2Z5f52E3Tj3aNLbnprX9vLNGYdNo', {
         // 5. Technical Section Viewport Focus (IntersectionObserver)
         if ('IntersectionObserver' in window) {
             var trackedElements = document.querySelectorAll(
-                '#profile, #core-stack, #experience, #experience article, #projects-recognition, #education-academic-languages, #expertise, #work, #lab, #life-cards'
+                '#profile, #achievements, #core-stack, #experience, #experience article, #projects-recognition, #education-academic-languages, #expertise, #work, #lab, #life-cards'
             );
 
             var viewedSections = new Set();

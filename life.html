@@ -53,11 +53,13 @@
             <p class="lede">The resume covers the work. This page is the rest: what I do when I’m not at a keyboard, and what I read, watch and make.</p>
         </section>
 
-        <section class="section wrap" id="life-cards" aria-label="Interests">
+        <section class="section wrap" id="life-cards" aria-label="Interests" style="padding-bottom: 2.5rem">
             <div class="life-grid">
-                <!-- To add a photo, put a resized copy in images/ and add inside the card, above .card-number:
-                     <figure><img src="images/hiking.webp" alt="describe the photo" width="1200" height="800" loading="lazy"></figure> -->
+                <!-- To add a photo to a card: put a resized, EXIF-free copy in images/ and add
+                     <figure><img src="images/NAME.webp" alt="…" width="…" height="…" loading="lazy"></figure>
+                     above its .card-number. -->
                 <article class="life-card">
+                    <figure><img src="images/hike-seceda.webp" alt="Amir hiking with trekking poles on the Seceda ridge in the Dolomites" width="1200" height="1600" loading="lazy" style="object-position: 50% 42%"></figure>
                     <span class="card-number">01</span>
                     <h2>Hiking &amp; biking</h2>
                     <p>I like being out on foot or on a bike, and the Alps are a short trip from Munich.</p>
@@ -82,6 +84,24 @@
                     <h2>Building &amp; repairing by hand</h2>
                     <p>I like building and repairing things with my hands, away from the screen.</p>
                 </article>
+            </div>
+        </section>
+
+        <section class="wrap life-gallery-section" aria-labelledby="gallery-title">
+            <h2 id="gallery-title" class="section-kicker">Out and about</h2>
+            <div class="life-gallery">
+                <figure>
+                    <img src="images/hike-dachstein.webp" alt="Lake Hallstatt and the surrounding mountains seen from the Dachstein" width="1200" height="1600" loading="lazy">
+                    <figcaption>Lake Hallstatt from the Dachstein, Austria</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/hike-coast.webp" alt="Green cliffs above the Atlantic Ocean" width="1200" height="1600" loading="lazy">
+                    <figcaption>Atlantic coast near Cabo da Roca, Portugal</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/munich.webp" alt="Amir in front of the Wittelsbach fountain in the Munich Residenz at sunset" width="1200" height="1600" loading="lazy" style="object-position: 50% 60%">
+                    <figcaption>Munich, where I live</figcaption>
+                </figure>
             </div>
         </section>
 

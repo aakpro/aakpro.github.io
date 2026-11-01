@@ -241,6 +241,12 @@ img { max-width: 100%; }
 .life-card .card-number { color: var(--faint); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .75rem; }
 .life-card h2 { margin: .5rem 0 .6rem; font-size: 1.3rem; letter-spacing: -.025em; }
 .life-card p { margin: 0; color: var(--muted); font-size: .95rem; }
+.life-gallery-section { padding-bottom: clamp(2rem, 5vw, 4rem); }
+.life-gallery-section .section-kicker { margin: 0 0 1.2rem; }
+.life-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; }
+.life-gallery figure { margin: 0; }
+.life-gallery img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 18px; border: 1px solid var(--line); }
+.life-gallery figcaption { margin-top: .55rem; color: var(--faint); font-size: .84rem; }
 
 /* Resume */
 .resume-body { background: var(--canvas-deep); }
@@ -449,6 +455,8 @@ img { max-width: 100%; }
         border-left: 1.5pt solid var(--line) !important;
         break-inside: avoid;
     }
+    /* Long entries may break between bullets rather than leave half a page empty. */
+    .experience:has(li:nth-child(4)) { break-inside: auto; }
     .experience::before {
         left: -3.5pt !important;
         top: 3pt !important;
