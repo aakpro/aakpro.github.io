@@ -7,7 +7,7 @@
 }
 
 :root {
-    color-scheme: dark light;
+    color-scheme: dark;
     --ink: #f4f8fb;
     --strong: #dfe9f3;
     --muted: #a8b6c7;
@@ -33,35 +33,6 @@
     --resume-top: linear-gradient(135deg, #102d3c, #101e36 70%);
     --max: 1160px;
     --shadow: 0 30px 90px rgba(0, 0, 0, 0.28);
-}
-
-@media (prefers-color-scheme: light) {
-    :root {
-        --ink: #0f1923;
-        --strong: #0f1923;
-        --muted: #3d4b5c;
-        --faint: #5b6b7e;
-        --canvas: #f6f8fb;
-        --canvas-deep: #eaeff5;
-        --surface: #ffffff;
-        --surface-soft: rgba(15, 25, 35, 0.035);
-        --header-bg: rgba(246, 248, 251, 0.82);
-        --line: rgba(15, 25, 35, 0.13);
-        --line-strong: rgba(13, 107, 99, 0.5);
-        --accent: #0d6b63;
-        --on-accent: #ffffff;
-        --blue: #1d4ed8;
-        --blue-soft: rgba(29, 78, 216, 0.08);
-        --chip-ink: #1f2d3d;
-        --glow-a: rgba(102, 230, 195, 0.16);
-        --glow-b: rgba(131, 170, 255, 0.16);
-        --grid-line: rgba(15, 25, 35, .05);
-        --card-grad: linear-gradient(155deg, #ffffff, #eef3f8);
-        --cta-grad: linear-gradient(140deg, #e3f4f0, #e8eefb);
-        --resume-bg: #ffffff;
-        --resume-top: linear-gradient(135deg, #e6f3f1, #eaf0fa 70%);
-        --shadow: 0 30px 90px rgba(15, 25, 35, 0.12);
-    }
 }
 
 * { box-sizing: border-box; }
