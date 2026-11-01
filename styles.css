@@ -312,7 +312,7 @@ img { max-width: 100%; }
 
 @page {
     size: A4;
-    margin: 12mm 14mm;
+    margin: 10mm 13mm;
 }
 
 @media print {
@@ -359,14 +359,14 @@ img { max-width: 100%; }
     }
     .resume-top-content { display: block !important; }
     .resume-top h1 {
-        font-size: 24pt !important;
+        font-size: 22pt !important;
         margin: 0 0 2pt 0 !important;
         line-height: 1.1;
         letter-spacing: -.01em;
         color: #09131d;
     }
     .resume-title {
-        font-size: 12pt !important;
+        font-size: 11pt !important;
         font-weight: 700;
         color: var(--accent) !important;
         margin-bottom: 1pt;
@@ -391,7 +391,7 @@ img { max-width: 100%; }
         padding: 0 !important;
     }
     .resume-section {
-        margin-bottom: 10pt !important;
+        margin-bottom: 8pt !important;
         break-inside: auto !important;
     }
     .resume-section h2 {
@@ -405,15 +405,15 @@ img { max-width: 100%; }
     }
     .resume-section h2::after { display: none; }
     .summary {
-        font-size: 9.5pt !important;
-        line-height: 1.4;
+        font-size: 9.2pt !important;
+        line-height: 1.34;
         color: var(--muted) !important;
         margin: 0;
     }
     .skill-row {
-        margin-bottom: 3pt !important;
+        margin-bottom: 2pt !important;
         font-size: 9pt !important;
-        line-height: 1.32;
+        line-height: 1.28;
         color: var(--muted) !important;
     }
     .skill-row strong {
@@ -422,10 +422,13 @@ img { max-width: 100%; }
     }
     .experience {
         padding-left: 9pt !important;
-        margin-bottom: 8pt !important;
+        margin-bottom: 6pt !important;
         border-left: 1.5pt solid var(--line) !important;
         break-inside: avoid;
     }
+    /* Start the leadership role on page two so the two-page resume has a deliberate,
+       balanced transition instead of a dense first page and a sparse second page. */
+    #experience .experience:nth-of-type(2) { break-before: page; }
     /* Long entries may break between bullets rather than leave half a page empty. */
     .experience:has(li:nth-child(4)) { break-inside: auto; }
     .experience::before {
@@ -456,10 +459,10 @@ img { max-width: 100%; }
         break-after: avoid;
     }
     .experience li {
-        margin: 2pt 0 !important;
+        margin: 1.5pt 0 !important;
         padding-left: 8pt !important;
-        font-size: 9.2pt !important;
-        line-height: 1.32;
+        font-size: 9.1pt !important;
+        line-height: 1.27;
         color: var(--muted) !important;
         break-inside: avoid;
     }
@@ -473,10 +476,10 @@ img { max-width: 100%; }
     }
     .project-bullets li {
         position: relative;
-        margin: 2pt 0 !important;
+        margin: 1.5pt 0 !important;
         padding-left: 8pt !important;
-        font-size: 9.2pt !important;
-        line-height: 1.32;
+        font-size: 9.1pt !important;
+        line-height: 1.27;
         color: var(--muted) !important;
         break-inside: avoid;
     }
@@ -494,9 +497,9 @@ img { max-width: 100%; }
         break-inside: avoid;
     }
     .meta-subgroup p {
-        font-size: 9.2pt !important;
-        line-height: 1.3;
-        margin: 0 0 3pt 0 !important;
+        font-size: 9.1pt !important;
+        line-height: 1.27;
+        margin: 0 0 2pt 0 !important;
         color: var(--muted) !important;
     }
     .meta-subgroup strong {
